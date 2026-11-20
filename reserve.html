@@ -71,11 +71,11 @@ setTimeout(function(){d.classList.remove('i18n-pending');},2500);})();
   <section class="section section--tight">
     <div class="wrap bk" id="booking">
       <div class="bk__main">
-        <div id="bk-steps">
-          <section class="bk__s" id="bk-seat"></section>
-          <section class="bk__s" id="bk-date"></section>
-          <section class="bk__s" id="bk-time"></section>
-          <section class="bk__s" id="bk-details"></section>
+        <div id="bk-wiz">
+          <div class="bk__prog"><p class="bk__pl" id="bk-pl"></p><div class="bk__pb"><i id="bk-pbar"></i></div></div>
+          <div class="bk__stage" id="bk-stage"></div>
+          <nav class="bk__nav" id="bk-nav"><button type="button" class="btn btn--ghost bk__back" id="bk-back" hidden></button><button type="button" class="btn btn--ember" id="bk-go"></button></nav>
+          <p class="sr-only" id="bk-ann" role="status" aria-live="polite"></p>
         </div>
         <section class="bk__done" id="bk-done" hidden></section>
       </div>
