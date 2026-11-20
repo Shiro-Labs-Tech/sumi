@@ -10,6 +10,11 @@
 
   var D = {
     en: {
+      'gal.eyebrow': 'On the grill', 'gal.title': 'Ten plates, one fire',
+      'gal.hint': 'Scroll to move along the grill',
+      'cur.view': 'Look',
+      'credit.t': 'Photography', 'credit.d': 'Photos are stock images from Unsplash, used as illustrative mood for this concept. They are not photos of any real restaurant or dish.',
+      'foot.mega': 'Shiro Sumi', 'visit.title2': 'Come when the coals are ready',
       skip: 'Skip to content',
       'nav.label': 'Main navigation', 'nav.toggle': 'Open menu', 'nav.close': 'Close menu',
       'nav.home': 'Home', 'nav.menu': 'Menu', 'nav.story': 'Story', 'nav.reserve': 'Reserve',
@@ -84,7 +89,7 @@
       'about.d': 'Shiro Sumi is a fictional restaurant created by Shiro Labs as a portfolio case study. It does not exist. The menu, prices, hours, address and every name are illustrative.',
 
       'res.eyebrow': 'Reserve', 'res.title': 'Save a seat at the fire',
-      'res.intro': 'This is a concept, so nothing is actually sent. Fill in the form to see how the booking flow would feel.',
+      'res.intro': 'This is a concept, so nothing is actually sent. Choose your seat, date and time to see how a real booking would feel.',
       'res.name': 'Your name', 'res.date': 'Date', 'res.time': 'Seating', 'res.guests': 'Guests', 'res.notes': 'Notes (allergies, occasions)',
       'res.t1': '17:30', 'res.t2': '19:00', 'res.t3': '20:30',
       'res.g': 'guests', 'res.g1': '1 guest',
@@ -107,6 +112,16 @@
     },
 
     id: {
+
+      'gal.eyebrow': 'Di atas bara', 'gal.title': 'Sepuluh piring, satu api',
+
+      'gal.hint': 'Gulir untuk menyusuri panggangan',
+
+      'cur.view': 'Lihat',
+
+      'credit.t': 'Fotografi', 'credit.d': 'Foto adalah gambar stok dari Unsplash, hanya sebagai suasana ilustratif untuk konsep ini. Bukan foto restoran atau hidangan yang nyata.',
+
+      'foot.mega': 'Shiro Sumi', 'visit.title2': 'Datanglah saat bara sudah siap',
       skip: 'Lewati ke konten',
       'nav.label': 'Navigasi utama', 'nav.toggle': 'Buka menu', 'nav.close': 'Tutup menu',
       'nav.home': 'Beranda', 'nav.menu': 'Menu', 'nav.story': 'Cerita', 'nav.reserve': 'Reservasi',
@@ -181,7 +196,7 @@
       'about.d': 'Shiro Sumi adalah restoran fiktif yang dibuat oleh Shiro Labs sebagai studi kasus portofolio. Restoran ini tidak nyata. Menu, harga, jam buka, alamat, dan semua nama hanyalah ilustrasi.',
 
       'res.eyebrow': 'Reservasi', 'res.title': 'Amankan kursi di dekat api',
-      'res.intro': 'Ini hanya konsep, jadi tidak ada yang benar-benar dikirim. Isi formulir untuk merasakan alur reservasinya.',
+      'res.intro': 'Ini hanya konsep, jadi tidak ada yang benar-benar dikirim. Pilih tempat, tanggal, dan waktu untuk merasakan alur reservasi sungguhan.',
       'res.name': 'Nama Anda', 'res.date': 'Tanggal', 'res.time': 'Sesi', 'res.guests': 'Tamu', 'res.notes': 'Catatan (alergi, acara khusus)',
       'res.t1': '17.30', 'res.t2': '19.00', 'res.t3': '20.30',
       'res.g': 'tamu', 'res.g1': '1 tamu',
@@ -204,6 +219,16 @@
     },
 
     ja: {
+
+      'gal.eyebrow': '炭火の上で', 'gal.title': '十皿、ひとつの火',
+
+      'gal.hint': 'スクロールして網の上をたどる',
+
+      'cur.view': '見る',
+
+      'credit.t': '写真', 'credit.d': '写真はUnsplashのストック画像で、このコンセプトの雰囲気を示すイメージです。実在する店舗や料理の写真ではありません。',
+
+      'foot.mega': 'Shiro Sumi', 'visit.title2': '炭が整うころに、どうぞ',
       skip: '本文へスキップ',
       'nav.label': 'メインナビゲーション', 'nav.toggle': 'メニューを開く', 'nav.close': 'メニューを閉じる',
       'nav.home': 'ホーム', 'nav.menu': 'メニュー', 'nav.story': '物語', 'nav.reserve': '予約',
@@ -278,7 +303,7 @@
       'about.d': 'Shiro Sumiは、Shiro Labsがポートフォリオのケーススタディとして作った架空のレストランです。実在しません。メニュー、価格、営業時間、住所、名称はすべて例示です。',
 
       'res.eyebrow': '予約', 'res.title': '火のそばの席を確保',
-      'res.intro': 'これはコンセプトなので、実際には何も送信されません。フォームに入力して、予約の流れを体験してください。',
+      'res.intro': 'これはコンセプトなので、実際には何も送信されません。お席・日付・時間を選んで、実際の予約の流れを体験してください。',
       'res.name': 'お名前', 'res.date': '日付', 'res.time': '時間帯', 'res.guests': '人数', 'res.notes': '備考(アレルギー、記念日など)',
       'res.t1': '17:30', 'res.t2': '19:00', 'res.t3': '20:30',
       'res.g': '名', 'res.g1': '1名',

@@ -8,32 +8,37 @@
 try{var l=localStorage.getItem('sumi-lang');if(l==='id'||l==='ja')d.lang=l;}catch(e){}
 var rm=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
 var seen=false;try{seen=sessionStorage.getItem('sumi-loaded')==='1';}catch(e){}
-if(rm||seen)d.classList.add('no-loader');
+if(rm||seen||true)d.classList.add('no-loader');
+if(rm)d.classList.add('reduce');
+try{if(!('onpagereveal' in window)&&sessionStorage.getItem('sumi-nav')==='1'){d.classList.add('nav-in');sessionStorage.removeItem('sumi-nav');}}catch(e){}
 setTimeout(function(){d.classList.remove('i18n-pending');},2500);})();
 </script>
 <title data-t="meta.reserve.title">Shiro Sumi</title>
 <meta name="description" content="" data-t-attrs="content=meta.reserve.desc">
-<meta name="theme-color" content="#140f0c">
+<meta name="theme-color" content="#0d0a08">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Shiro Sumi (concept)">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23140f0c'/%3E%3Ccircle cx='32' cy='32' r='20' fill='none' stroke='%23e4572e' stroke-width='4' stroke-dasharray='110 20'/%3E%3Ccircle cx='32' cy='32' r='6' fill='%23d6a23f'/%3E%3C/svg%3E">
-<link rel="preload" href="fonts/fraunces-latin-opsz-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="css/fonts.css">
-<link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230d0a08'/%3E%3Ccircle cx='32' cy='32' r='20' fill='none' stroke='%23ff5a1f' stroke-width='4' stroke-dasharray='110 20'/%3E%3Ccircle cx='32' cy='32' r='6' fill='%23ffb347'/%3E%3C/svg%3E">
+<link rel="preload" href="/fonts/bodoni-moda-latin-opsz-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/hanken-grotesk-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preconnect" href="https://images.unsplash.com" crossorigin>
+<link rel="stylesheet" href="/src/style.css">
+<script type="module" src="/src/main.js"></script>
 </head>
 <body data-page="reserve">
-<canvas id="embers" aria-hidden="true"></canvas>
 <div class="loader" id="loader" aria-hidden="true">
-  <div class="loader__log">
-    <svg viewBox="0 0 200 200" width="200" height="200" focusable="false">
+  <div class="loader__in">
+    <svg viewBox="0 0 200 200" width="170" height="170" focusable="false">
       <circle class="loader__ring" cx="100" cy="100" r="78" pathLength="100"/>
-      <circle class="loader__core" cx="100" cy="100" r="26"/>
+      <circle class="loader__core" cx="100" cy="100" r="22"/>
     </svg>
     <span class="loader__word">Shiro Sumi</span>
   </div>
 </div>
+<div class="curtain" id="curtain" aria-hidden="true"></div>
+<div class="cursor" id="cursor" aria-hidden="true"><span></span></div>
 <a class="skip" href="#main" data-t="skip">Skip to content</a>
-<header class="site-header">
+<header class="site-header" id="site-header">
   <div class="wrap bar">
     <a class="brand" href="index.html" data-t-attrs="aria-label=brand.label">
       <span class="brand__mark" aria-hidden="true">炭</span>
@@ -58,49 +63,25 @@ setTimeout(function(){d.classList.remove('i18n-pending');},2500);})();
   <section class="page-head">
     <div class="wrap">
       <p class="eyebrow reveal" data-t="res.eyebrow">Reserve</p>
-      <h1 class="display display--sm reveal" style="--d:.08s" data-t="res.title">Save a seat at the fire</h1>
+      <h1 class="display display--sm split" data-t="res.title">Save a seat at the fire</h1>
       <p class="lede reveal" style="--d:.16s" data-t="res.intro"></p>
     </div>
   </section>
 
   <section class="section section--tight">
-    <div class="wrap res-grid">
-      <form class="form reveal" id="res-form" novalidate>
-        <div class="field">
-          <label for="f-name" data-t="res.name">Your name</label>
-          <input id="f-name" name="name" type="text" autocomplete="name" required aria-describedby="e-name">
-          <p class="field__err" id="e-name" role="alert" hidden></p>
+    <div class="wrap bk" id="booking">
+      <div class="bk__main">
+        <div id="bk-wiz">
+          <div class="bk__prog"><p class="bk__pl" id="bk-pl"></p><div class="bk__pb"><i id="bk-pbar"></i></div></div>
+          <div class="bk__stage" id="bk-stage"></div>
+          <nav class="bk__nav" id="bk-nav"><button type="button" class="btn btn--ghost bk__back" id="bk-back" hidden></button><button type="button" class="btn btn--ember" id="bk-go"></button></nav>
+          <p class="sr-only" id="bk-ann" role="status" aria-live="polite"></p>
         </div>
-        <div class="field-row">
-          <div class="field">
-            <label for="f-date" data-t="res.date">Date</label>
-            <input id="f-date" name="date" type="date" min="2026-11-19" required aria-describedby="e-date">
-            <p class="field__err" id="e-date" role="alert" hidden></p>
-          </div>
-          <div class="field">
-            <label for="f-time" data-t="res.time">Seating</label>
-            <select id="f-time" name="time">
-              <option data-t="res.t1">17:30</option><option data-t="res.t2" selected>19:00</option><option data-t="res.t3">20:30</option>
-            </select>
-          </div>
-          <div class="field">
-            <label for="f-guests" data-t="res.guests">Guests</label>
-            <select id="f-guests" name="guests" aria-describedby="h-guests">
-              <option value="1">1</option><option value="2" selected>2</option><option value="3">3</option>
-              <option value="4">4</option><option value="5">5</option><option value="6">6</option>
-            </select>
-          </div>
-        </div>
-        <p class="field__hint" id="h-guests" data-t="res.limit"></p>
-        <div class="field">
-          <label for="f-notes" data-t="res.notes">Notes</label>
-          <textarea id="f-notes" name="notes" rows="3"></textarea>
-        </div>
-        <button class="btn btn--ember" type="submit" data-t="res.submit">Request a seat</button>
-        <p class="form__ok" id="res-ok" role="status" hidden></p>
-      </form>
+        <section class="bk__done" id="bk-done" hidden></section>
+      </div>
 
-      <aside class="side reveal" style="--d:.12s">
+      <aside class="side">
+        <div class="sm" id="bk-sum" aria-live="polite"></div>
         <h2 class="h3" data-t="res.info.t">Good to know</h2>
         <dl class="facts facts--stack">
           <div class="fact"><dt data-t="visit.hours.t"></dt><dd data-t="visit.hours.d"></dd></div>
@@ -109,15 +90,16 @@ setTimeout(function(){d.classList.remove('i18n-pending');},2500);})();
         </dl>
         <figure class="map">
           <svg viewBox="0 0 320 220" role="img" data-t-attrs="aria-label=map.alt" focusable="false">
-            <rect width="320" height="220" fill="#1d1511"/>
+            <rect width="320" height="220" fill="#17110d"/>
             <path d="M-10 150 C60 120 90 190 170 150 S280 90 340 120" fill="none" stroke="#2e3a3f" stroke-width="22" stroke-linecap="round"/>
             <g stroke="#3a2f28" stroke-width="6" fill="none" stroke-linecap="round">
               <path d="M0 40 H320"/><path d="M0 100 H320"/><path d="M0 190 H320"/>
               <path d="M60 0 V220"/><path d="M150 0 V220"/><path d="M240 0 V220"/>
             </g>
             <g stroke="#2a211b" stroke-width="2" fill="none"><path d="M0 70 H320"/><path d="M105 0 V220"/><path d="M195 0 V220"/><path d="M285 0 V220"/></g>
-            <circle class="map__pulse" cx="150" cy="100" r="16" fill="#e4572e" opacity=".25"/>
-            <circle cx="150" cy="100" r="7" fill="#e4572e"/><circle cx="150" cy="100" r="2.5" fill="#efe4d0"/>
+            <path class="map__route" d="M12 200 C 60 196 84 140 112 130 S 140 108 150 100" pathLength="1" fill="none" stroke="#ff5a1f" stroke-width="3" stroke-linecap="round" stroke-dasharray="1" stroke-dashoffset="0"/>
+            <circle class="map__pulse" cx="150" cy="100" r="16" fill="#ff5a1f" opacity=".25"/>
+            <circle cx="150" cy="100" r="7" fill="#ff5a1f"/><circle cx="150" cy="100" r="2.5" fill="#efe4d0"/>
           </svg>
           <figcaption data-t="map.cap">Stylized map, not to scale.</figcaption>
         </figure>
@@ -126,6 +108,9 @@ setTimeout(function(){d.classList.remove('i18n-pending');},2500);})();
   </section>
 </main>
 <footer class="site-footer">
+  <div class="foot__mega" aria-hidden="true">
+    <span class="foot__glyph">炭</span><span class="foot__word" data-t="foot.mega">Shiro Sumi</span>
+  </div>
   <div class="wrap">
     <div class="foot__top">
       <a class="brand" href="index.html" data-t-attrs="aria-label=brand.label">
@@ -144,12 +129,14 @@ setTimeout(function(){d.classList.remove('i18n-pending');},2500);})();
       <p data-t="foot.disc">Shiro Sumi is an illustrative concept project.</p>
       <p data-t="foot.rates">Reference rates.</p>
       <p data-t="foot.review">Indonesian and Japanese copy is awaiting native review.</p>
+      <details class="foot__credits">
+        <summary data-t="credit.t">Photography</summary>
+        <p data-t="credit.d"></p>
+        <ul><li><a href="https://unsplash.com/@ghorich?utm_source=shiro_sumi_concept&utm_medium=referral" rel="noopener" target="_blank">Danny de Jong</a> <span aria-hidden="true">/</span> <a href="https://unsplash.com/photos/Np5GnOfsfo0?utm_source=shiro_sumi_concept&utm_medium=referral" rel="noopener" target="_blank">Unsplash</a></li><li><a href="https://unsplash.com/@nino_korkelia?utm_source=shiro_sumi_concept&utm_medium=referral" rel="noopener" target="_blank">Nino Korkelia</a> <span aria-hidden="true">/</span> <a href="https://unsplash.com/photos/Xzpp2Ah7MWA?utm_source=shiro_sumi_concept&utm_medium=referral" rel="noopener" target="_blank">Unsplash</a></li><li><a href="https://unsplash.com/@ja024?utm_source=shiro_sumi_concept&utm_medium=referral" rel="noopener" target="_blank">Jay</a> <span aria-hidden="true">/</span> <a href="https://unsplash.com/photos/R6Rzujlmdjc?utm_source=shiro_sumi_concept&utm_medium=referral" rel="noopener" target="_blank">Unsplash</a></li><li><a href="https://unsplash.com/@momentsbyprats?utm_source=shiro_sumi_concept&utm_medium=referral" rel="noopener" target="_blank">Pratiksha Singh</a> <span aria-hidden="true">/</span> <a href="https://unsplash.com/photos/0Vcxz3-Ncl8?utm_source=shiro_sumi_concept&utm_medium=referral" rel="noopener" target="_blank">Unsplash</a></li><li><a href="https://unsplash.com/@momentsbyprats?utm_source=shiro_sumi_concept&utm_medium=referral" rel="noopener" target="_blank">Pratiksha Singh</a> <span aria-hidden="true">/</span> <a href="https://unsplash.com/photos/TURS5_0Lq4k?utm_source=shiro_sumi_concept&utm_medium=referral" rel="noopener" target="_blank">Unsplash</a></li><li><a href="https://unsplash.com/@low_fat_milk?utm_source=shiro_sumi_concept&utm_medium=referral" rel="noopener" target="_blank">sanghoon kim</a> <span aria-hidden="true">/</span> <a href="https://unsplash.com/photos/mLKQyF8y5UA?utm_source=shiro_sumi_concept&utm_medium=referral" rel="noopener" target="_blank">Unsplash</a></li><li><a href="https://unsplash.com/@tanbacolor?utm_source=shiro_sumi_concept&utm_medium=referral" rel="noopener" target="_blank">Jonathan Mark Bacolor</a> <span aria-hidden="true">/</span> <a href="https://unsplash.com/photos/LQeavijwPBA?utm_source=shiro_sumi_concept&utm_medium=referral" rel="noopener" target="_blank">Unsplash</a></li><li><a href="https://unsplash.com/@ryunosuke_kikuno?utm_source=shiro_sumi_concept&utm_medium=referral" rel="noopener" target="_blank">Ryunosuke Kikuno</a> <span aria-hidden="true">/</span> <a href="https://unsplash.com/photos/Et5Q49kBYNE?utm_source=shiro_sumi_concept&utm_medium=referral" rel="noopener" target="_blank">Unsplash</a></li><li><a href="https://unsplash.com/@marekpiwnicki?utm_source=shiro_sumi_concept&utm_medium=referral" rel="noopener" target="_blank">Marek Piwnicki</a> <span aria-hidden="true">/</span> <a href="https://unsplash.com/photos/zALm5VkUBWw?utm_source=shiro_sumi_concept&utm_medium=referral" rel="noopener" target="_blank">Unsplash</a></li><li><a href="https://unsplash.com/@mandimelanie?utm_source=shiro_sumi_concept&utm_medium=referral" rel="noopener" target="_blank">Amanda Lim</a> <span aria-hidden="true">/</span> <a href="https://unsplash.com/photos/e_A-SFvqV08?utm_source=shiro_sumi_concept&utm_medium=referral" rel="noopener" target="_blank">Unsplash</a></li><li><a href="https://unsplash.com/@filipp_roman_photography?utm_source=shiro_sumi_concept&utm_medium=referral" rel="noopener" target="_blank">Filipp Romanovski</a> <span aria-hidden="true">/</span> <a href="https://unsplash.com/photos/B24epTR09To?utm_source=shiro_sumi_concept&utm_medium=referral" rel="noopener" target="_blank">Unsplash</a></li><li><a href="https://unsplash.com/@miloleetw?utm_source=shiro_sumi_concept&utm_medium=referral" rel="noopener" target="_blank">Lee Milo</a> <span aria-hidden="true">/</span> <a href="https://unsplash.com/photos/N0lnO0gZlW8?utm_source=shiro_sumi_concept&utm_medium=referral" rel="noopener" target="_blank">Unsplash</a></li><li><a href="https://unsplash.com/@victorkg?utm_source=shiro_sumi_concept&utm_medium=referral" rel="noopener" target="_blank">Victor Kwashie</a> <span aria-hidden="true">/</span> <a href="https://unsplash.com/photos/4VMr19ljQUA?utm_source=shiro_sumi_concept&utm_medium=referral" rel="noopener" target="_blank">Unsplash</a></li><li><a href="https://unsplash.com/@binyoussif?utm_source=shiro_sumi_concept&utm_medium=referral" rel="noopener" target="_blank">BINYOUSSIF mohammad ali</a> <span aria-hidden="true">/</span> <a href="https://unsplash.com/photos/CdP2h2Or8Pc?utm_source=shiro_sumi_concept&utm_medium=referral" rel="noopener" target="_blank">Unsplash</a></li><li><a href="https://unsplash.com/@firlefanzski?utm_source=shiro_sumi_concept&utm_medium=referral" rel="noopener" target="_blank">Ashley Winkler</a> <span aria-hidden="true">/</span> <a href="https://unsplash.com/photos/cz4rC-IRfxw?utm_source=shiro_sumi_concept&utm_medium=referral" rel="noopener" target="_blank">Unsplash</a></li><li><a href="https://unsplash.com/@russfr?utm_source=shiro_sumi_concept&utm_medium=referral" rel="noopener" target="_blank">Russell Ferrer</a> <span aria-hidden="true">/</span> <a href="https://unsplash.com/photos/FU4Egyl8o2k?utm_source=shiro_sumi_concept&utm_medium=referral" rel="noopener" target="_blank">Unsplash</a></li></ul>
+      </details>
       <p class="foot__by"><span data-t="foot.by">Designed and built by Shiro Labs</span></p>
     </div>
   </div>
 </footer>
-<script src="js/i18n.js"></script>
-<script src="js/main.js" defer></script>
-<script src="js/embers.js" defer></script>
 </body>
 </html>
