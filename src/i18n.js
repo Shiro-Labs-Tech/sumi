@@ -10,6 +10,11 @@
 
   var D = {
     en: {
+      'gal.eyebrow': 'On the grill', 'gal.title': 'Five plates, one fire',
+      'gal.hint': 'Scroll to move along the grill',
+      'cur.view': 'Look',
+      'credit.t': 'Photography', 'credit.d': 'Photos are stock images from Unsplash, used as illustrative mood for this concept. They are not photos of any real restaurant or dish.',
+      'foot.mega': 'Shiro Sumi', 'visit.title2': 'Come when the coals are ready',
       skip: 'Skip to content',
       'nav.label': 'Main navigation', 'nav.toggle': 'Open menu', 'nav.close': 'Close menu',
       'nav.home': 'Home', 'nav.menu': 'Menu', 'nav.story': 'Story', 'nav.reserve': 'Reserve',
@@ -107,6 +112,16 @@
     },
 
     id: {
+
+      'gal.eyebrow': 'Di atas bara', 'gal.title': 'Lima piring, satu api',
+
+      'gal.hint': 'Gulir untuk menyusuri panggangan',
+
+      'cur.view': 'Lihat',
+
+      'credit.t': 'Fotografi', 'credit.d': 'Foto adalah gambar stok dari Unsplash, hanya sebagai suasana ilustratif untuk konsep ini. Bukan foto restoran atau hidangan yang nyata.',
+
+      'foot.mega': 'Shiro Sumi', 'visit.title2': 'Datanglah saat bara sudah siap',
       skip: 'Lewati ke konten',
       'nav.label': 'Navigasi utama', 'nav.toggle': 'Buka menu', 'nav.close': 'Tutup menu',
       'nav.home': 'Beranda', 'nav.menu': 'Menu', 'nav.story': 'Cerita', 'nav.reserve': 'Reservasi',
@@ -204,6 +219,16 @@
     },
 
     ja: {
+
+      'gal.eyebrow': '炭火の上で', 'gal.title': '五皿、ひとつの火',
+
+      'gal.hint': 'スクロールして網の上をたどる',
+
+      'cur.view': '見る',
+
+      'credit.t': '写真', 'credit.d': '写真はUnsplashのストック画像で、このコンセプトの雰囲気を示すイメージです。実在する店舗や料理の写真ではありません。',
+
+      'foot.mega': 'Shiro Sumi', 'visit.title2': '炭が整うころに、どうぞ',
       skip: '本文へスキップ',
       'nav.label': 'メインナビゲーション', 'nav.toggle': 'メニューを開く', 'nav.close': 'メニューを閉じる',
       'nav.home': 'ホーム', 'nav.menu': 'メニュー', 'nav.story': '物語', 'nav.reserve': '予約',
