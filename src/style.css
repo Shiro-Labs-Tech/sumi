@@ -459,7 +459,7 @@ html[lang='ja'] .sm__r dt { letter-spacing: .02em; }
 @keyframes stamp { from { transform: rotate(-20deg) scale(1.9); opacity: 0; } 60% { opacity: 1; } to { transform: rotate(-8deg) scale(1); opacity: 1; } }
 @media (prefers-reduced-motion: reduce) { .seal { animation: none; } .opt, .slot, .cal__d { transition: none; } .opt:hover, .slot:hover, .cal__d:hover { transform: none; } }
 @media (max-width: 520px) { .sm__r { grid-template-columns: 5.2rem minmax(0, 1fr); } .field-row--phone { grid-template-columns: 6rem minmax(0, 1fr); } }
-@media print { .site-header, .site-footer, .done__a, .side, .curtain, #loader { display: none !important; } body { background: #fff; color: #000; } }
+
 .field-row--phone { align-items: end; } .field-row--phone label { white-space: nowrap; }
 
 /* ---------- booking wizard (one question per screen) ---------- */
@@ -522,3 +522,54 @@ button.btn--ghost { background: transparent; }
 .bk__form .field__err[hidden] { display: block; visibility: hidden; }
 .bk__form .field-row, .bk__form .field-row--phone { align-items: start; }
 .bk__form .agree + .field__err { min-height: 1.35em; }
+
+/* ---------- printable reservation confirmation ---------- */
+#sumi-voucher { display: none; }
+@page { size: A4; margin: 0; }
+@media print {
+  html, body { background: #fff !important; }
+  body > *:not(#sumi-voucher) { display: none !important; }
+  #sumi-voucher { display: block; }
+  * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
+.vch { --ink: #17120f; --mut: #6f655b; --line: #e6dfd5; --acc: #c8470f; --tint: #faf6f0;
+  box-sizing: border-box; width: 210mm; min-height: 297mm; padding: 13mm 18mm 10mm; height: 296mm; overflow: hidden; background: #fff; color: var(--ink);
+  font-family: 'Hanken Grotesk', system-ui, sans-serif; font-size: 10pt; line-height: 1.5; display: flex; flex-direction: column; gap: 5mm; position: relative; }
+.vch::before { content: ''; position: absolute; left: 0; right: 0; top: 0; height: 3.2mm; background: linear-gradient(90deg, #c8470f, #f08a3c); }
+.vch p, .vch h2, .vch dl, .vch dd, .vch dt, .vch ol { margin: 0; padding: 0; }
+.vch__top { display: flex; justify-content: space-between; align-items: center; padding-top: 3mm; padding-bottom: 5mm; border-bottom: 1px solid var(--ink); }
+.vch__brand { display: flex; align-items: center; gap: 4mm; }
+.vch__seal { width: 14mm; height: 14mm; border: 1.4pt solid var(--acc); border-radius: 50%; display: grid; place-items: center; color: var(--acc); font-family: var(--f-display); font-size: 17pt; line-height: 1; }
+.vch__name { font-family: 'Bodoni Moda', serif; font-size: 20pt; line-height: 1.1; letter-spacing: -.01em; font-optical-sizing: none; font-variation-settings: 'opsz' 28; }
+.vch__tag { color: var(--mut); font-size: 8.5pt; letter-spacing: .08em; text-transform: uppercase; }
+.vch__doc { text-align: right; display: grid; gap: 2mm; justify-items: end; }
+.vch__dt { font-size: 8.5pt; letter-spacing: .16em; text-transform: uppercase; color: var(--mut); }
+.vch__st { display: inline-block; padding: 1mm 3.6mm; border-radius: 99px; background: #e9f4ec; color: #1d6b3a; font-weight: 600; font-size: 9pt; }
+.vch__st.is-wait { background: #fdf0d9; color: #8a5a00; }
+.vch__lb { font-size: 7.5pt; letter-spacing: .16em; text-transform: uppercase; color: var(--mut); margin-bottom: 1.2mm; }
+.vch__ref { display: flex; justify-content: space-between; align-items: center; background: var(--tint); border: 1px solid var(--line); border-radius: 2mm; padding: 4mm 6mm; }
+.vch__code { font-family: 'Bodoni Moda', serif; font-size: 26pt; line-height: 1; letter-spacing: .08em; color: var(--acc); font-variant-numeric: lining-nums; }
+.vch__iss { margin-top: 2.4mm; color: var(--mut); font-size: 9pt; }
+.vch__iss span { text-transform: uppercase; letter-spacing: .14em; font-size: 7.5pt; margin-right: 1.6mm; }
+.vch__qr { margin: 0; display: grid; justify-items: center; gap: 1.4mm; }
+.vch__qrs { width: 24mm; height: 24mm; padding: 1.6mm; background: #fff; border: 1px solid var(--line); border-radius: 1.4mm; }
+.vch__qrs svg { display: block; width: 100%; height: 100%; }
+.vch__qr figcaption { font-size: 7pt; letter-spacing: .12em; text-transform: uppercase; color: var(--mut); }
+.vch__when { display: grid; grid-template-columns: 1.6fr 1fr; gap: 6mm; padding-bottom: 5mm; border-bottom: 1px solid var(--line); }
+.vch__big { font-family: 'Bodoni Moda', serif; font-size: 17pt; line-height: 1.2; font-optical-sizing: none; font-variation-settings: 'opsz' 28; }
+.vch__big small { font-family: 'Hanken Grotesk', sans-serif; font-size: 9pt; color: var(--mut); }
+.vch__sec h2 { font-size: 8pt; letter-spacing: .18em; text-transform: uppercase; color: var(--acc); font-weight: 600; padding-bottom: 2mm; margin-bottom: 3mm; border-bottom: 1px solid var(--line); }
+.vch__g { display: grid; grid-template-columns: repeat(2, 1fr); gap: 3.2mm 8mm; }
+.vch__c dt { font-size: 7.5pt; letter-spacing: .12em; text-transform: uppercase; color: var(--mut); margin-bottom: .6mm; }
+.vch__c dd { font-size: 10.5pt; font-weight: 500; }
+.vch__c small { display: block; font-weight: 400; font-size: 8.5pt; color: var(--mut); }
+.vch__terms { padding-left: 4.5mm; display: grid; gap: 1.6mm; color: #3a322b; font-size: 9pt; }
+.vch__ven { display: grid; gap: .6mm; font-size: 9.5pt; }
+.vch__ven h2 { margin-bottom: 2.4mm; }
+.vch__foot { margin-top: auto; padding-top: 4mm; border-top: 1px solid var(--ink); display: grid; gap: 1.6mm; }
+.vch__arr { font-weight: 500; }
+.vch__con { color: var(--mut); font-size: 8pt; }
+.vch__pg { color: var(--mut); font-size: 7.5pt; letter-spacing: .14em; text-transform: uppercase; }
+html[lang='ja'] .vch__lb, html[lang='ja'] .vch__dt, html[lang='ja'] .vch__sec h2, html[lang='ja'] .vch__c dt, html[lang='ja'] .vch__tag { letter-spacing: .04em; }
+.vch__g--3 { grid-template-columns: 1fr 1.5fr 1fr; gap: 3.2mm 6mm; }
+.vch__g--3 .vch__c dd { overflow-wrap: anywhere; }

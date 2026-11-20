@@ -40,7 +40,8 @@ const S = {
     eName: 'Please enter your name.', eEmail: 'Please enter a valid email.', ePhone: 'Please enter a mobile number.', eAgree: 'Please confirm the policy.',
     doneT: 'Request received', doneW: 'You are on the waitlist', ref: 'Reference', doneNote: 'Concept only: no real booking was made.',
     next: 'In a real booking you would now get an email and an SMS, a reminder the day before, and a link to change or cancel.',
-    ics: 'Add to calendar', print: 'Print', again: 'Start another', thanks: 'Thank you, {name}.', icsTitle: 'Shiro Sumi (concept)', icsDesc: 'Concept reservation, not a real booking.',
+    vT: 'Reservation confirmation', vScan: 'Scan on arrival', vSub: 'Binchotan grill · Surabaya', vIssued: 'Issued', vGuest: 'Guest', vContact: 'Contact', vDetails: 'Your reservation', vPay: 'Deposit and estimate', vTerms: 'Terms', vVenue: 'Venue', vAddr: 'Jl. Contoh No. 12, Surabaya (illustrative)', vHours: 'Tuesday to Sunday, 17:00 to 23:00. Closed Monday.', vMail: 'reservations@sumi.example (illustrative)', vArrive: 'Please quote your reference on arrival. We hold your seat for 15 minutes.', vConcept: 'Concept document. Shiro Sumi is a fictional restaurant by Shiro Labs. No booking was made and no payment was taken.', vPage: 'shiro-labs.tech', vFile: 'Shiro-Sumi-Reservation',
+    ics: 'Add to calendar', print: 'Save as PDF', again: 'Start another', thanks: 'Thank you, {name}.', icsTitle: 'Shiro Sumi (concept)', icsDesc: 'Concept reservation, not a real booking.',
     info: 'Good to know',
   },
   id: {
@@ -79,7 +80,8 @@ const S = {
     eName: 'Silakan isi nama Anda.', eEmail: 'Masukkan email yang valid.', ePhone: 'Masukkan nomor ponsel.', eAgree: 'Mohon setujui kebijakan.',
     doneT: 'Permintaan diterima', doneW: 'Anda masuk daftar tunggu', ref: 'Referensi', doneNote: 'Hanya konsep: tidak ada reservasi sungguhan.',
     next: 'Pada reservasi nyata, Anda akan menerima email dan SMS, pengingat sehari sebelumnya, dan tautan untuk mengubah atau membatalkan.',
-    ics: 'Tambah ke kalender', print: 'Cetak', again: 'Mulai lagi', thanks: 'Terima kasih, {name}.', icsTitle: 'Shiro Sumi (konsep)', icsDesc: 'Reservasi konsep, bukan reservasi sungguhan.',
+    vT: 'Konfirmasi reservasi', vScan: 'Pindai saat tiba', vSub: 'Panggangan binchotan · Surabaya', vIssued: 'Diterbitkan', vGuest: 'Tamu', vContact: 'Kontak', vDetails: 'Reservasi Anda', vPay: 'Deposit dan estimasi', vTerms: 'Ketentuan', vVenue: 'Lokasi', vAddr: 'Jl. Contoh No. 12, Surabaya (ilustrasi)', vHours: 'Selasa sampai Minggu, 17.00 sampai 23.00. Senin tutup.', vMail: 'reservations@sumi.example (ilustrasi)', vArrive: 'Mohon sebutkan nomor referensi saat tiba. Kami menahan kursi Anda selama 15 menit.', vConcept: 'Dokumen konsep. Shiro Sumi adalah restoran fiktif karya Shiro Labs. Tidak ada reservasi dan tidak ada pembayaran.', vPage: 'shiro-labs.tech', vFile: 'Shiro-Sumi-Reservasi',
+    ics: 'Tambah ke kalender', print: 'Simpan PDF', again: 'Mulai lagi', thanks: 'Terima kasih, {name}.', icsTitle: 'Shiro Sumi (konsep)', icsDesc: 'Reservasi konsep, bukan reservasi sungguhan.',
     info: 'Perlu diketahui',
   },
   ja: {
@@ -118,7 +120,8 @@ const S = {
     eName: 'お名前を入力してください。', eEmail: '正しいメールアドレスを入力してください。', ePhone: '携帯電話番号を入力してください。', eAgree: '内容への同意が必要です。',
     doneT: 'リクエストを受け付けました', doneW: '空き待ちに登録しました', ref: '予約番号', doneNote: 'コンセプトのため、実際の予約は行われていません。',
     next: '実際の予約では、メールとSMSの確認、前日のリマインド、変更・キャンセル用のリンクが届きます。',
-    ics: 'カレンダーに追加', print: '印刷', again: 'もう一度予約する', thanks: '{name}様、ありがとうございます。', icsTitle: 'Shiro Sumi(コンセプト)', icsDesc: 'コンセプトの予約であり、実際の予約ではありません。',
+    vT: 'ご予約確認書', vScan: 'ご来店時にご提示ください', vSub: '備長炭グリル · スラバヤ', vIssued: '発行日', vGuest: 'お客様', vContact: '連絡先', vDetails: 'ご予約内容', vPay: 'デポジットとお見積り', vTerms: 'ご利用条件', vVenue: '店舗情報', vAddr: 'Jl. Contoh No. 12, スラバヤ(架空)', vHours: '火曜〜日曜 17:00〜23:00。月曜定休。', vMail: 'reservations@sumi.example(架空)', vArrive: 'ご来店時に予約番号をお伝えください。お席は15分間お取りします。', vConcept: 'コンセプト文書です。Shiro Sumiは Shiro Labs による架空のレストランで、実際の予約も支払いもありません。', vPage: 'shiro-labs.tech', vFile: 'Shiro-Sumi-Yoyaku',
+    ics: 'カレンダーに追加', print: 'PDFで保存', again: 'もう一度予約する', thanks: '{name}様、ありがとうございます。', icsTitle: 'Shiro Sumi(コンセプト)', icsDesc: 'コンセプトの予約であり、実際の予約ではありません。',
     info: 'ご案内',
   },
 };
@@ -488,6 +491,58 @@ function renderDone() {
     <dl class="done__l">${row(t.ref, `<b class="done__ref">${esc(st.done.ref)}</b>`)}${row(t.sSeat, esc(t.seat[st.seat].n))}${row(t.sGuests, esc(st.guests === 1 ? t.guest1 : fmt(t.guestN, { n: st.guests })))}${row(t.sDate, esc(longDate(st.date)))}${row(t.sTime, esc(st.time))}</dl>
     <p class="bk__note">${esc(t.doneNote)}</p>
     <div class="done__a"><button type="button" class="btn btn--ember" data-act="ics">${esc(t.ics)}</button><button type="button" class="btn btn--ghost" data-act="print">${esc(t.print)}</button><button type="button" class="btn btn--ghost" data-act="again">${esc(t.again)}</button></div>`;
+  mountVoucher(); loadQR().then(mountVoucher);
+}
+
+/* ---------- printable confirmation (A4), mounted on <body> and shown only when printing ---------- */
+let QR = null;
+const loadQR = async () => { if (!QR) { const m = await import('qrcode-generator'); QR = typeof m.default === 'function' ? m.default : (m.default && m.default.default) || m; } };
+function qrSvg(text) {
+  if (!QR) return '';
+  const q = QR(0, 'M'); q.addData(text); q.make();
+  return q.createSvgTag({ cellSize: 4, margin: 0, scalable: true });
+}
+function voucherHTML() {
+  const t = L(), w = st.done.wait, tt = total(), c = SEATS[st.seat];
+  const issued = new Intl.DateTimeFormat(loc(), { dateStyle: 'long' }).format(new Date());
+  const cell = (k, v, big) => `<div class="vch__c${big ? ' vch__c--big' : ''}"><dt>${esc(k)}</dt><dd>${v}</dd></div>`;
+  const ad = [st.add.sake && t.addSake, st.add.cake && t.addCake].filter(Boolean).join(', ');
+  const diet = st.diet.length ? st.diet.map((i) => t.diets[i]).join(', ') : '';
+  const guests = st.guests === 1 ? t.guest1 : fmt(t.guestN, { n: st.guests });
+  return `<article class="vch" lang="${lang()}">
+    <header class="vch__top">
+      <div class="vch__brand"><span class="vch__seal">炭</span><div><p class="vch__name">Shiro Sumi</p><p class="vch__tag">${esc(t.vSub)}</p></div></div>
+      <div class="vch__doc"><p class="vch__dt">${esc(t.vT)}</p><p class="vch__st${w ? ' is-wait' : ''}">${esc(w ? t.doneW : t.doneT)}</p></div>
+    </header>
+    <section class="vch__ref"><div class="vch__rl"><p class="vch__lb">${esc(t.ref)}</p><p class="vch__code">${esc(st.done.ref)}</p><p class="vch__iss"><span>${esc(t.vIssued)}</span> ${esc(issued)}</p></div><figure class="vch__qr"><div class="vch__qrs" role="img" aria-label="QR ${esc(st.done.ref)}">${qrSvg(st.done.ref)}</div><figcaption>${esc(t.vScan)}</figcaption></figure></section>
+    <section class="vch__when">
+      <div><p class="vch__lb">${esc(t.sDate)}</p><p class="vch__big">${esc(longDate(st.date))}</p></div>
+      <div><p class="vch__lb">${esc(t.sTime)}</p><p class="vch__big">${esc(st.time)}${w ? `<small> · ${esc(t.wait)}</small>` : ''}</p></div>
+    </section>
+    <section class="vch__sec"><h2>${esc(t.vDetails)}</h2>
+      <dl class="vch__g">${cell(t.sSeat, esc(t.seat[st.seat].n))}${cell(t.sGuests, esc(guests))}${cell(t.sOcc, esc(t.occs[st.occ]))}${diet ? cell(t.sDiet, esc(diet)) : ''}${ad ? cell(t.sAdd, esc(ad)) : ''}</dl></section>
+    <section class="vch__sec"><h2>${esc(t.vGuest)}</h2>
+      <dl class="vch__g vch__g--3">${cell(t.name, esc(st.name))}${cell(t.email, esc(st.email))}${cell(t.phone, esc(`${st.cc} ${st.phone}`))}</dl></section>
+    <section class="vch__sec"><h2>${esc(t.vPay)}</h2>
+      <dl class="vch__g">${cell(t.sDep, `${w ? '' : esc(money(tt.dep))}<small>${esc(w ? t.depWait : t.depNow)}</small>`)}${tt.menu ? cell(t.sEst, `${esc(money(tt.est))}<small>${esc(t.estNote)}</small>`) : ''}</dl></section>
+    <section class="vch__sec"><h2>${esc(t.vTerms)}</h2><ol class="vch__terms"><li>${esc(t.pol1)}</li><li>${esc(t.pol2)}</li><li>${esc(t.pol3)}</li></ol></section>
+    <section class="vch__sec vch__ven"><h2>${esc(t.vVenue)}</h2><p>${esc(t.vAddr)}</p><p>${esc(t.vHours)}</p><p>${esc(t.vMail)}</p></section>
+    <footer class="vch__foot"><p class="vch__arr">${esc(t.vArrive)}</p><p class="vch__con">${esc(t.vConcept)}</p><p class="vch__pg">Shiro Labs · ${esc(t.vPage)}</p></footer>
+  </article>`;
+}
+function mountVoucher() {
+  let el = document.getElementById('sumi-voucher');
+  if (!st.done) { if (el) el.remove(); return; }
+  if (!el) { el = document.createElement('div'); el.id = 'sumi-voucher'; document.body.appendChild(el); }
+  el.innerHTML = voucherHTML();
+}
+async function printVoucher() {
+  await loadQR(); mountVoucher();
+  const t = L(), prev = document.title;
+  document.title = `${t.vFile}-${st.done.ref}`;
+  const back = () => { document.title = prev; removeEventListener('afterprint', back); };
+  addEventListener('afterprint', back);
+  window.print();
 }
 
 function renderAll() {
@@ -541,8 +596,8 @@ function onClick(e) {
   }
   if (t.dataset.add) { st.add[t.dataset.add] = t.checked; updateChrome(false); renderSummary(); return; }
   if (t.dataset.act === 'ics') { const u = URL.createObjectURL(icsFile()), a = document.createElement('a'); a.href = u; a.download = 'shiro-sumi-concept.ics'; document.body.append(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(u), 1500); return; }
-  if (t.dataset.act === 'print') { window.print(); return; }
-  if (t.dataset.act === 'again') { Object.assign(st, { step: 0, seat: '', guests: 2, date: '', time: '', occ: 0, diet: [], sn: [], notes: '', add: { sake: false, cake: false }, agree: false, done: null }); view = null; renderAll(); root.scrollIntoView({ block: 'start' }); return; }
+  if (t.dataset.act === 'print') { printVoucher(); return; }
+  if (t.dataset.act === 'again') { Object.assign(st, { step: 0, seat: '', guests: 2, date: '', time: '', occ: 0, diet: [], sn: [], notes: '', add: { sake: false, cake: false }, agree: false, done: null }); view = null; mountVoucher(); renderAll(); root.scrollIntoView({ block: 'start' }); return; }
 }
 
 // clear a shown error as soon as the field becomes valid
