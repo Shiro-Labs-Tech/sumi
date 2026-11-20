@@ -12,7 +12,7 @@ const S = {
       terrace: { n: 'Garden terrace', d: 'Open-air seats under the frangipani. If it rains we move you inside.', m: 'Outdoor · 1 to 6 guests' },
     },
     from: 'Deposit', pp: 'per guest', menuPp: 'Set menu', alc: 'À la carte',
-    guests: 'Guests', guest1: '1 guest', guestN: '{n} guests', less: 'Fewer guests', more: 'More guests', range: 'This seating takes {a} to {b} guests.',
+    guests: 'Guests', guest1: '1 guest', guestN: '{n} guests', upT: 'A bigger party than {n}?', upB: '{name} seats up to {max} guests, so everyone sits together.', upBtn: 'Move to {name}', upMax: 'For parties above {n}, message us and we will arrange a private table.', less: 'Fewer guests', more: 'More guests', range: 'This seating takes {a} to {b} guests.',
     prev: 'Previous month', next: 'Next month', lOpen: 'Open', lFew: 'Few left', lFull: 'Full', lClosed: 'Closed',
     cal: 'Calendar', calNote: 'Closed on Mondays. Bookings open 60 days ahead. For sooner, message us.',
     dFull: 'full', dFew: 'few seats left', dClosed: 'closed', dOpen: 'available',
@@ -51,7 +51,7 @@ const S = {
       terrace: { n: 'Teras taman', d: 'Kursi terbuka di bawah pohon kamboja. Jika hujan, kami pindahkan ke dalam.', m: 'Luar ruang · 1 sampai 6 tamu' },
     },
     from: 'Deposit', pp: 'per tamu', menuPp: 'Menu set', alc: 'À la carte',
-    guests: 'Tamu', guest1: '1 tamu', guestN: '{n} tamu', less: 'Kurangi tamu', more: 'Tambah tamu', range: 'Tempat ini menerima {a} sampai {b} tamu.',
+    guests: 'Tamu', guest1: '1 tamu', guestN: '{n} tamu', upT: 'Rombongan lebih dari {n} orang?', upB: '{name} menampung sampai {max} tamu, jadi semua duduk bersama.', upBtn: 'Pindah ke {name}', upMax: 'Untuk rombongan di atas {n}, kirim pesan dan kami siapkan meja privat.', less: 'Kurangi tamu', more: 'Tambah tamu', range: 'Tempat ini menerima {a} sampai {b} tamu.',
     prev: 'Bulan sebelumnya', next: 'Bulan berikutnya', lOpen: 'Tersedia', lFew: 'Hampir penuh', lFull: 'Penuh', lClosed: 'Tutup',
     cal: 'Kalender', calNote: 'Tutup hari Senin. Reservasi dibuka 60 hari ke depan. Untuk lebih cepat, hubungi kami.',
     dFull: 'penuh', dFew: 'kursi tinggal sedikit', dClosed: 'tutup', dOpen: 'tersedia',
@@ -90,7 +90,7 @@ const S = {
       terrace: { n: 'ガーデンテラス', d: 'プルメリアの木の下の屋外席。雨の場合は店内へご案内します。', m: '屋外 · 1〜6名' },
     },
     from: '予約金', pp: '1名あたり', menuPp: 'コース', alc: 'アラカルト',
-    guests: '人数', guest1: '1名', guestN: '{n}名', less: '人数を減らす', more: '人数を増やす', range: 'このお席は{a}〜{b}名様までです。',
+    guests: '人数', guest1: '1名', guestN: '{n}名', upT: '{n}名様より多いご利用ですか？', upB: '{name}は最大{max}名様まで。皆様ご一緒にお座りいただけます。', upBtn: '{name}に変更', upMax: '{n}名様を超える場合は、個室のご用意についてメッセージをお送りください。', less: '人数を減らす', more: '人数を増やす', range: 'このお席は{a}〜{b}名様までです。',
     prev: '前の月', next: '次の月', lOpen: '空きあり', lFew: '残りわずか', lFull: '満席', lClosed: '休業',
     cal: 'カレンダー', calNote: '月曜は休業です。ご予約は60日先まで。直近のご希望はメッセージをください。',
     dFull: '満席', dFew: '残りわずか', dClosed: '休業', dOpen: '空きあり',
@@ -305,6 +305,7 @@ function body(i) {
       <button type="button" class="gst__b" data-g="-1" aria-label="${esc(t.less)}" ${st.guests <= c.min ? 'disabled' : ''}>−</button>
       <output class="gst__v" aria-live="polite"><b>${st.guests}</b><span>${esc(t.gw[st.guests === 1 ? 0 : 1])}</span></output>
       <button type="button" class="gst__b" data-g="1" aria-label="${esc(t.more)}" ${st.guests >= c.max ? 'disabled' : ''}>+</button></div>
+      ${upsell()}
       <p class="bk__hint" data-a>${esc(fmt(t.range, { a: c.min, b: c.max }))}</p>
       <p class="bk__hint" data-a>${esc(fmt(t.depLine, { a: money(c.dep) }))}</p>`;
   }
@@ -382,6 +383,15 @@ function updateChrome(animate) {
   go.classList.toggle('btn--ember', !optional || last);
   go.disabled = !valid(n);
   root.querySelector('#bk-nav').hidden = n === 0 && !st.seat && false;
+}
+
+function upsell() {
+  const t = L(), c = SEATS[st.seat];
+  if (st.guests < c.max) return '';
+  const k = ORDER.filter((x) => SEATS[x].max > c.max).sort((a, b) => SEATS[a].max - SEATS[b].max)[0];
+  if (!k) return `<aside class="up" id="bk-up"><p class="up__t">${esc(fmt(t.upT, { n: c.max }))}</p><p class="up__b">${esc(fmt(t.upMax, { n: c.max }))}</p></aside>`;
+  const nm = t.seat[k].n;
+  return `<aside class="up" id="bk-up"><p class="up__t">${esc(fmt(t.upT, { n: c.max }))}</p><p class="up__b">${esc(fmt(t.upB, { name: nm, max: SEATS[k].max }))}</p><button type="button" class="btn btn--ghost up__btn" data-upsell="${k}">${esc(fmt(t.upBtn, { name: nm }))} →</button></aside>`;
 }
 
 function renderStep() {
@@ -504,6 +514,7 @@ function onClick(e) {
     root.querySelectorAll('[data-seat]').forEach((b) => { const on = b === t; b.classList.toggle('is-sel', on); b.setAttribute('aria-checked', on); });
     updateChrome(false); renderSummary(); schedule(next); return;
   }
+  if (t.dataset.upsell) { st.seat = t.dataset.upsell; clampGuests(); invalidateDown(1); renderStep(); const v = root.querySelector('.gst__v b'); if (v && !reduced()) gsap.from(v, { scale: 1.12, duration: 0.5, ease: 'back.out(2.5)' }); return; }
   if (t.dataset.g) {
     const dir = +t.dataset.g, before = st.guests;
     st.guests += dir; clampGuests(); invalidateDown(2);
@@ -511,6 +522,7 @@ function onClick(e) {
     if (st.guests !== before && !reduced()) {
       const b = root.querySelector('.gst__v b'), btn = root.querySelector(`[data-g="${dir}"]`);
       if (b) gsap.fromTo(b, { yPercent: dir > 0 ? 55 : -55, opacity: 0, scale: 0.9 }, { yPercent: 0, opacity: 1, scale: 1, duration: 0.5, ease: 'power3.out', overwrite: true });
+      const up = root.querySelector('#bk-up'); if (up) { gsap.from(up, { opacity: 0, y: 18, duration: 0.55, ease: 'power3.out', delay: 0.1 }); up.scrollIntoView({ block: 'center', behavior: 'smooth' }); }
       if (btn) gsap.fromTo(btn, { scale: 0.88 }, { scale: 1, duration: 0.45, ease: 'back.out(3)', overwrite: true });
     }
     return;
