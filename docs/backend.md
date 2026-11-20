@@ -5,7 +5,7 @@ Shiro Sumi is a concept restaurant, but the booking and menu run on a real stack
 ## Pieces
 | Part | Where | Notes |
 | --- | --- | --- |
-| API | `api/[...route].js` -> `server/router.js` | One Vercel Function, plain Node, no framework |
+| API | `api/index.js` -> `server/router.js` | One Vercel Function (all `/api/*` rewritten to it via `vercel.json`), plain Node, no framework |
 | Database | Neon Postgres (`DATABASE_URL`) | `server/db.js` adapts Neon in production and PGlite (in-process Postgres) for tests and local work |
 | Schema | `server/schema.js` | Idempotent, append-only migrations. Applied at build time (`scripts/migrate.js`) and lazily on the first request |
 | Public site | `src/menu.js`, `src/booking.js` | Menu and gallery read `/api/menu`; the wizard reads `/api/availability` and posts `/api/reservations`. The static HTML menu is the fallback if the API is down |

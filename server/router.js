@@ -20,7 +20,10 @@ const need = async (req, roles) => {
 export async function handle(req, res) {
   try {
     const url = new URL(req.url, 'http://x');
-    const path = url.pathname.replace(/^\/api/, '').replace(/\/+$/, '') || '/';
+    // On Vercel every /api/* request is rewritten to /api/index?__p=<original path>; locally the path is used as is.
+    const rewritten = url.searchParams.get('__p');
+    url.searchParams.delete('__p');
+    const path = (rewritten !== null ? '/' + rewritten : url.pathname.replace(/^\/api/, '')).replace(/\/+$/, '') || '/';
     const m = req.method, Q = Object.fromEntries(url.searchParams);
     if (path === '/health') return send(res, 200, { ok: true, database: hasDatabase() });
     if (!hasDatabase()) throw new HttpError(503, 'The database is not connected yet.', 'no_database');

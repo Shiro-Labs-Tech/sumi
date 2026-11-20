@@ -150,3 +150,12 @@ test('waitlist promotion respects capacity', async () => {
   await call('POST', `/admin/reservations/${first.ref}/status`, { to: 'cancelled' });
   assert.equal((await call('POST', `/admin/reservations/${w.ref}/status`, { to: 'confirmed' })).data.status, 'confirmed');
 });
+
+test('Vercel rewrite form (/api/index?__p=...) routes like the plain path', async () => {
+  const origin = base.replace(/\/api$/, '');
+  const me = await fetch(`${origin}/api/index?__p=auth%2Fme`).then((r) => r.json());
+  assert.ok('user' in me);
+  const av = await fetch(`${origin}/api/index?__p=availability&seat=counter`).then((r) => r.json());
+  assert.equal(av.seat, 'counter'); // other query params survive, __p is stripped
+  assert.equal((await fetch(`${origin}/api/index?__p=nope/missing`)).status, 404);
+});
