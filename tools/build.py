@@ -220,7 +220,7 @@ GALLERY = [('sate', 'yakitori'), ('tsukune', 'grill'), ('tahu', 'tofu'), ('wagyu
 
 def card(i, k, photo):
     idr = DISHES[k][0]
-    return f'''<li class="card" data-cursor="view">
+    return f'''<li class="card" data-cursor="view" data-slug="{k}">
   {ph(photo, 'card__img', sizes='(min-width: 900px) 30vw, 78vw', widths=(500, 800, 1100))}
   <span class="card__n" aria-hidden="true">{i + 1:02d}</span>
   <h3 class="card__name" data-t="d.{k}.n"></h3>

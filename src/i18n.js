@@ -57,7 +57,7 @@
       'menu.note': 'Illustrative prices in the language currency. Converted amounts are approximate.',
       'menu.jump': 'Menu sections',
       'cat.starters': 'Starters', 'cat.mains': 'Mains', 'cat.sides': 'Rice and sides', 'cat.sweets': 'Sweets', 'cat.drinks': 'Drinks',
-      'tag.v': 'Vegetarian', 'tag.s': 'Spicy',
+      'tag.v': 'Vegetarian', 'tag.s': 'Spicy', 'tag.out': 'Sold out tonight',
 
       'd.sate.n': 'Sate lilit, binchotan', 'd.sate.d': 'Minced Spanish mackerel with lemongrass and coconut, wrapped on a lemongrass stick.',
       'd.tsukune.n': 'Tsukune, sambal matah glaze', 'd.tsukune.d': 'Chicken thigh meatball glazed with tare and topped with raw shallot sambal.',
@@ -89,7 +89,7 @@
       'about.d': 'Shiro Sumi is a fictional restaurant created by Shiro Labs as a portfolio case study. It does not exist. The menu, prices, hours, address and every name are illustrative.',
 
       'res.eyebrow': 'Reserve', 'res.title': 'Save a seat at the fire',
-      'res.intro': 'This is a concept, so nothing is actually sent. Choose your seat, date and time to see how a real booking would feel.',
+      'res.intro': 'Shiro Sumi is a concept restaurant. Your request is stored in a demo system so the staff dashboard can show it, but no table is held and nobody will contact you.',
       'res.name': 'Your name', 'res.date': 'Date', 'res.time': 'Seating', 'res.guests': 'Guests', 'res.notes': 'Notes (allergies, occasions)',
       'res.t1': '17:30', 'res.t2': '19:00', 'res.t3': '20:30',
       'res.g': 'guests', 'res.g1': '1 guest',
@@ -164,7 +164,7 @@
       'menu.note': 'Harga ilustrasi dalam mata uang bahasa ini. Nilai konversi hanya perkiraan.',
       'menu.jump': 'Bagian menu',
       'cat.starters': 'Pembuka', 'cat.mains': 'Hidangan utama', 'cat.sides': 'Nasi dan pendamping', 'cat.sweets': 'Penutup', 'cat.drinks': 'Minuman',
-      'tag.v': 'Vegetarian', 'tag.s': 'Pedas',
+      'tag.v': 'Vegetarian', 'tag.s': 'Pedas', 'tag.out': 'Habis malam ini',
 
       'd.sate.n': 'Sate lilit, binchotan', 'd.sate.d': 'Ikan tenggiri cincang dengan serai dan kelapa, dililitkan pada batang serai.',
       'd.tsukune.n': 'Tsukune, glasir sambal matah', 'd.tsukune.d': 'Bola daging paha ayam berglasir tare, dengan sambal matah bawang merah mentah.',
@@ -196,7 +196,7 @@
       'about.d': 'Shiro Sumi adalah restoran fiktif yang dibuat oleh Shiro Labs sebagai studi kasus portofolio. Restoran ini tidak nyata. Menu, harga, jam buka, alamat, dan semua nama hanyalah ilustrasi.',
 
       'res.eyebrow': 'Reservasi', 'res.title': 'Amankan kursi di dekat api',
-      'res.intro': 'Ini hanya konsep, jadi tidak ada yang benar-benar dikirim. Pilih tempat, tanggal, dan waktu untuk merasakan alur reservasi sungguhan.',
+      'res.intro': 'Shiro Sumi adalah restoran konsep. Permintaan Anda disimpan di sistem demo agar dasbor staf dapat menampilkannya, tetapi tidak ada meja yang ditahan dan tidak ada yang akan menghubungi Anda.',
       'res.name': 'Nama Anda', 'res.date': 'Tanggal', 'res.time': 'Sesi', 'res.guests': 'Tamu', 'res.notes': 'Catatan (alergi, acara khusus)',
       'res.t1': '17.30', 'res.t2': '19.00', 'res.t3': '20.30',
       'res.g': 'tamu', 'res.g1': '1 tamu',
@@ -271,7 +271,7 @@
       'menu.note': '価格はこの言語の通貨による例示です。換算額はおおよその目安です。',
       'menu.jump': 'メニューの項目',
       'cat.starters': '前菜', 'cat.mains': '主菜', 'cat.sides': 'ご飯と副菜', 'cat.sweets': 'デザート', 'cat.drinks': 'ドリンク',
-      'tag.v': 'ベジタリアン', 'tag.s': '辛い',
+      'tag.v': 'ベジタリアン', 'tag.s': '辛い', 'tag.out': '本日完売',
 
       'd.sate.n': 'サテ・リリット 炭火焼き', 'd.sate.d': 'サワラのすり身にレモングラスとココナッツを合わせ、レモングラスの串に巻いて焼きます。',
       'd.tsukune.n': 'つくね サンバルマター仕立て', 'd.tsukune.d': '鶏ももの肉団子にタレを塗り、生のエシャロットのサンバルをのせて。',
@@ -303,7 +303,7 @@
       'about.d': 'Shiro Sumiは、Shiro Labsがポートフォリオのケーススタディとして作った架空のレストランです。実在しません。メニュー、価格、営業時間、住所、名称はすべて例示です。',
 
       'res.eyebrow': '予約', 'res.title': '火のそばの席を確保',
-      'res.intro': 'これはコンセプトなので、実際には何も送信されません。お席・日付・時間を選んで、実際の予約の流れを体験してください。',
+      'res.intro': 'Shiro Sumiはコンセプトのレストランです。ご依頼はスタッフ用ダッシュボードに表示するためデモシステムに保存されますが、お席の確保やご連絡はありません。',
       'res.name': 'お名前', 'res.date': '日付', 'res.time': '時間帯', 'res.guests': '人数', 'res.notes': '備考(アレルギー、記念日など)',
       'res.t1': '17:30', 'res.t2': '19:00', 'res.t3': '20:30',
       'res.g': '名', 'res.g1': '1名',
@@ -377,7 +377,7 @@
     apply(lang);
   }
 
-  window.SUMI_I18N = { t: t, set: set, get: function () { return current; }, dict: D };
+  window.SUMI_I18N = { t: t, set: set, get: function () { return current; }, dict: D, money: money };
 
   function init() {
     document.querySelectorAll('[data-lang-set]').forEach(function (b) {

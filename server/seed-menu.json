@@ -1,0 +1,349 @@
+{
+ "categories": {
+  "starters": {
+   "en": "Starters",
+   "id": "Pembuka",
+   "ja": "前菜"
+  },
+  "mains": {
+   "en": "Mains",
+   "id": "Hidangan utama",
+   "ja": "主菜"
+  },
+  "sides": {
+   "en": "Rice and sides",
+   "id": "Nasi dan pendamping",
+   "ja": "ご飯と副菜"
+  },
+  "sweets": {
+   "en": "Sweets",
+   "id": "Penutup",
+   "ja": "デザート"
+  },
+  "drinks": {
+   "en": "Drinks",
+   "id": "Minuman",
+   "ja": "ドリンク"
+  }
+ },
+ "items": [
+  {
+   "slug": "sate",
+   "category": "starters",
+   "price_idr": 68000,
+   "veg": false,
+   "spicy": false,
+   "photo": "yakitori",
+   "name": {
+    "en": "Sate lilit, binchotan",
+    "id": "Sate lilit, binchotan",
+    "ja": "サテ・リリット 炭火焼き"
+   },
+   "desc": {
+    "en": "Minced Spanish mackerel with lemongrass and coconut, wrapped on a lemongrass stick.",
+    "id": "Ikan tenggiri cincang dengan serai dan kelapa, dililitkan pada batang serai.",
+    "ja": "サワラのすり身にレモングラスとココナッツを合わせ、レモングラスの串に巻いて焼きます。"
+   },
+   "position": 0,
+   "featured": true
+  },
+  {
+   "slug": "tsukune",
+   "category": "starters",
+   "price_idr": 72000,
+   "veg": false,
+   "spicy": true,
+   "photo": "grill",
+   "name": {
+    "en": "Tsukune, sambal matah glaze",
+    "id": "Tsukune, glasir sambal matah",
+    "ja": "つくね サンバルマター仕立て"
+   },
+   "desc": {
+    "en": "Chicken thigh meatball glazed with tare and topped with raw shallot sambal.",
+    "id": "Bola daging paha ayam berglasir tare, dengan sambal matah bawang merah mentah.",
+    "ja": "鶏ももの肉団子にタレを塗り、生のエシャロットのサンバルをのせて。"
+   },
+   "position": 1,
+   "featured": true
+  },
+  {
+   "slug": "edamame",
+   "category": "starters",
+   "price_idr": 38000,
+   "veg": true,
+   "spicy": false,
+   "photo": "kitchen",
+   "name": {
+    "en": "Smoked edamame",
+    "id": "Edamame asap",
+    "ja": "燻製枝豆"
+   },
+   "desc": {
+    "en": "Grilled in the pod with kaffir lime leaf and sea salt.",
+    "id": "Dipanggang dalam polongnya dengan daun jeruk purut dan garam laut.",
+    "ja": "さやごと炭火で焼き、コブミカンの葉と海塩を添えて。"
+   },
+   "position": 2,
+   "featured": false
+  },
+  {
+   "slug": "tahu",
+   "category": "starters",
+   "price_idr": 42000,
+   "veg": true,
+   "spicy": false,
+   "photo": "tofu",
+   "name": {
+    "en": "Charred tofu, miso kecap",
+    "id": "Tahu bakar, miso kecap",
+    "ja": "焼き豆腐 味噌ケチャップマニス"
+   },
+   "desc": {
+    "en": "Firm tofu glazed with white miso and kecap manis, scattered with fried shallot.",
+    "id": "Tahu padat berglasir miso putih dan kecap manis, ditaburi bawang goreng.",
+    "ja": "固めの豆腐に白味噌とケチャップマニスを塗り、揚げ玉ねぎを散らして。"
+   },
+   "position": 3,
+   "featured": true
+  },
+  {
+   "slug": "wagyu",
+   "category": "mains",
+   "price_idr": 185000,
+   "veg": false,
+   "spicy": true,
+   "photo": "night",
+   "name": {
+    "en": "Wagyu skewers, rica-rica butter",
+    "id": "Sate wagyu, mentega rica-rica",
+    "ja": "和牛串 リカリカバター"
+   },
+   "desc": {
+    "en": "Local wagyu rump over high heat, brushed with chili-lime butter.",
+    "id": "Wagyu lokal dipanggang api besar, diolesi mentega cabai dan jeruk nipis.",
+    "ja": "地元産の和牛ももを強火で焼き、唐辛子とライムのバターを塗って。"
+   },
+   "position": 4,
+   "featured": true
+  },
+  {
+   "slug": "snapper",
+   "category": "mains",
+   "price_idr": 165000,
+   "veg": false,
+   "spicy": true,
+   "photo": "ueno",
+   "name": {
+    "en": "Whole snapper, bumbu kuning",
+    "id": "Kakap utuh, bumbu kuning",
+    "ja": "フエダイの丸焼き 黄色いスパイス"
+   },
+   "desc": {
+    "en": "Day-boat red snapper rubbed with turmeric paste, served with yuzu kosho.",
+    "id": "Kakap merah segar dilumuri pasta kunyit, disajikan dengan yuzu kosho.",
+    "ja": "その日に揚がった赤いフエダイにターメリックのペーストを塗り、柚子胡椒を添えて。"
+   },
+   "position": 5,
+   "featured": true
+  },
+  {
+   "slug": "ayam",
+   "category": "mains",
+   "price_idr": 98000,
+   "veg": false,
+   "spicy": false,
+   "photo": "chicken",
+   "name": {
+    "en": "Ayam bakar, shio koji",
+    "id": "Ayam bakar, shio koji",
+    "ja": "焼き鶏 塩麹"
+   },
+   "desc": {
+    "en": "Thigh marinated in shio koji, finished with calamansi and charred scallion.",
+    "id": "Paha ayam dimarinasi shio koji, disajikan dengan jeruk kalamansi dan daun bawang bakar.",
+    "ja": "塩麹に漬けた鶏ももに、カラマンシーと焼きねぎを添えて。"
+   },
+   "position": 6,
+   "featured": true
+  },
+  {
+   "slug": "jamur",
+   "category": "mains",
+   "price_idr": 78000,
+   "veg": true,
+   "spicy": false,
+   "photo": "mushroom",
+   "name": {
+    "en": "King oyster, rendang glaze",
+    "id": "Jamur king oyster, glasir rendang",
+    "ja": "エリンギ レンダン仕立て"
+   },
+   "desc": {
+    "en": "Scored mushroom brushed with a slow-cooked coconut and spice glaze.",
+    "id": "Jamur yang digores, diolesi glasir santan dan rempah yang dimasak lama.",
+    "ja": "切り込みを入れたエリンギに、ココナッツとスパイスをじっくり煮詰めたタレを塗って。"
+   },
+   "position": 7,
+   "featured": true
+  },
+  {
+   "slug": "rice",
+   "category": "sides",
+   "price_idr": 48000,
+   "veg": false,
+   "spicy": false,
+   "photo": "kitchen",
+   "name": {
+    "en": "Smoked nasi bakar",
+    "id": "Nasi bakar asap",
+    "ja": "燻製ナシ・バカール"
+   },
+   "desc": {
+    "en": "Rice grilled in banana leaf with dashi and a soft egg yolk.",
+    "id": "Nasi dibakar dalam daun pisang dengan dashi dan kuning telur setengah matang.",
+    "ja": "バナナの葉で包んで焼いたご飯に、出汁と半熟の卵黄を添えて。"
+   },
+   "position": 8,
+   "featured": false
+  },
+  {
+   "slug": "kangkung",
+   "category": "sides",
+   "price_idr": 36000,
+   "veg": true,
+   "spicy": false,
+   "photo": "market",
+   "name": {
+    "en": "Kangkung, garlic, ponzu",
+    "id": "Kangkung, bawang putih, ponzu",
+    "ja": "空心菜 ニンニクとポン酢"
+   },
+   "desc": {
+    "en": "Water spinach flashed over the fire with garlic and house ponzu.",
+    "id": "Kangkung disambar api bersama bawang putih dan ponzu buatan sendiri.",
+    "ja": "空心菜を強火でさっと炙り、ニンニクと自家製ポン酢で。"
+   },
+   "position": 9,
+   "featured": false
+  },
+  {
+   "slug": "banana",
+   "category": "sweets",
+   "price_idr": 52000,
+   "veg": true,
+   "spicy": false,
+   "photo": "banana",
+   "name": {
+    "en": "Grilled banana, hojicha caramel",
+    "id": "Pisang bakar, karamel hojicha",
+    "ja": "焼きバナナ ほうじ茶キャラメル"
+   },
+   "desc": {
+    "en": "Pisang kepok with hojicha caramel and toasted coconut.",
+    "id": "Pisang kepok dengan karamel hojicha dan kelapa sangrai.",
+    "ja": "ピサン・ケポックにほうじ茶のキャラメルと香ばしいココナッツ。"
+   },
+   "position": 10,
+   "featured": true
+  },
+  {
+   "slug": "ice",
+   "category": "sweets",
+   "price_idr": 48000,
+   "veg": true,
+   "spicy": false,
+   "photo": "icecream",
+   "name": {
+    "en": "Black sesame and pandan ice cream",
+    "id": "Es krim wijen hitam dan pandan",
+    "ja": "黒ごまとパンダンのアイス"
+   },
+   "desc": {
+    "en": "Two scoops with a salted rice cracker.",
+    "id": "Dua scoop dengan kerupuk beras asin.",
+    "ja": "2スクープに、塩味の米せんべいを添えて。"
+   },
+   "position": 11,
+   "featured": true
+  },
+  {
+   "slug": "iced",
+   "category": "drinks",
+   "price_idr": 32000,
+   "veg": true,
+   "spicy": false,
+   "photo": "spice",
+   "name": {
+    "en": "Iced hojicha",
+    "id": "Es hojicha",
+    "ja": "アイスほうじ茶"
+   },
+   "desc": {
+    "en": "Roasted green tea, palm sugar, lime.",
+    "id": "Teh hijau sangrai, gula aren, jeruk nipis.",
+    "ja": "焙じ茶にヤシ糖とライムを。"
+   },
+   "position": 12,
+   "featured": false
+  },
+  {
+   "slug": "jahe",
+   "category": "drinks",
+   "price_idr": 85000,
+   "veg": false,
+   "spicy": false,
+   "photo": "spice",
+   "name": {
+    "en": "Jahe highball",
+    "id": "Highball jahe",
+    "ja": "ジンジャーハイボール"
+   },
+   "desc": {
+    "en": "Japanese whisky, ginger, lime, soda.",
+    "id": "Wiski Jepang, jahe, jeruk nipis, soda.",
+    "ja": "日本のウイスキー、生姜、ライム、ソーダ。"
+   },
+   "position": 13,
+   "featured": true
+  },
+  {
+   "slug": "sake",
+   "category": "drinks",
+   "price_idr": 195000,
+   "veg": false,
+   "spicy": false,
+   "photo": "bar",
+   "name": {
+    "en": "Sake flight",
+    "id": "Sake flight",
+    "ja": "日本酒フライト"
+   },
+   "desc": {
+    "en": "Three pours, chosen to match the menu.",
+    "id": "Tiga tuangan, dipilih agar serasi dengan menu.",
+    "ja": "メニューに合わせて選んだ3種。"
+   },
+   "position": 14,
+   "featured": false
+  }
+ ],
+ "photoIds": {
+  "fire": "1526213174737-acd9757c6bf3",
+  "grill": "1789838810583-47fc52f47bb2",
+  "yakitori": "1727281970223-d4895fd0872f",
+  "steam": "1763604048392-18f8383a6542",
+  "chef": "1763604048369-a93af06413b0",
+  "kitchen": "1777025728663-ff2654bbb72e",
+  "night": "1639716553235-a8275d845fd7",
+  "ueno": "1705803432022-f6145988c5d0",
+  "spice": "1741513599050-487ccfb86275",
+  "chicken": "1630564510761-a560db92a09b",
+  "mushroom": "1676140382464-83cd80afc22b",
+  "tofu": "1762305194201-077e7e23ccf2",
+  "banana": "1507835418932-dfcc1a16d393",
+  "icecream": "1689076758310-92b693fe6b8b",
+  "market": "1576181456177-2b99ac0aa1ef",
+  "bar": "1657593091045-3927d4967afe"
+ }
+}
