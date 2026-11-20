@@ -1,8 +1,10 @@
 import './i18n.js';
 import { initUI } from './ui.js';
+import { initBooking } from './booking.js';
 import { initMotion } from './motion.js';
 
 initUI();
+initBooking();
 initMotion().catch((err) => {
   // Never leave the page hidden if motion fails.
   console.error('[sumi] motion disabled:', err);

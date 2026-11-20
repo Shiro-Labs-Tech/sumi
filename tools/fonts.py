@@ -3,7 +3,7 @@ import os
 SRC='/home/claude/fontsrc/node_modules/@fontsource'
 SRCV='/home/claude/fontsrc/node_modules/@fontsource-variable'
 OUT=os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-text=''.join(open(p,encoding='utf-8').read() for p in [OUT+'/src/i18n.js']+glob.glob(OUT+'/*.html')+[OUT+'/tools/build.py'])
+text=''.join(open(p,encoding='utf-8').read() for p in [OUT+'/src/i18n.js', OUT+'/src/booking.js']+glob.glob(OUT+'/*.html')+[OUT+'/tools/build.py'])
 chars={ord(c) for c in text if ord(c)>127}
 chars|={ord(c) for c in '炭日本語'}
 def parse(css):

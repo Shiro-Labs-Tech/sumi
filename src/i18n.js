@@ -10,7 +10,7 @@
 
   var D = {
     en: {
-      'gal.eyebrow': 'On the grill', 'gal.title': 'Five plates, one fire',
+      'gal.eyebrow': 'On the grill', 'gal.title': 'Ten plates, one fire',
       'gal.hint': 'Scroll to move along the grill',
       'cur.view': 'Look',
       'credit.t': 'Photography', 'credit.d': 'Photos are stock images from Unsplash, used as illustrative mood for this concept. They are not photos of any real restaurant or dish.',
@@ -89,7 +89,7 @@
       'about.d': 'Shiro Sumi is a fictional restaurant created by Shiro Labs as a portfolio case study. It does not exist. The menu, prices, hours, address and every name are illustrative.',
 
       'res.eyebrow': 'Reserve', 'res.title': 'Save a seat at the fire',
-      'res.intro': 'This is a concept, so nothing is actually sent. Fill in the form to see how the booking flow would feel.',
+      'res.intro': 'This is a concept, so nothing is actually sent. Choose your seat, date and time to see how a real booking would feel.',
       'res.name': 'Your name', 'res.date': 'Date', 'res.time': 'Seating', 'res.guests': 'Guests', 'res.notes': 'Notes (allergies, occasions)',
       'res.t1': '17:30', 'res.t2': '19:00', 'res.t3': '20:30',
       'res.g': 'guests', 'res.g1': '1 guest',
@@ -113,7 +113,7 @@
 
     id: {
 
-      'gal.eyebrow': 'Di atas bara', 'gal.title': 'Lima piring, satu api',
+      'gal.eyebrow': 'Di atas bara', 'gal.title': 'Sepuluh piring, satu api',
 
       'gal.hint': 'Gulir untuk menyusuri panggangan',
 
@@ -196,7 +196,7 @@
       'about.d': 'Shiro Sumi adalah restoran fiktif yang dibuat oleh Shiro Labs sebagai studi kasus portofolio. Restoran ini tidak nyata. Menu, harga, jam buka, alamat, dan semua nama hanyalah ilustrasi.',
 
       'res.eyebrow': 'Reservasi', 'res.title': 'Amankan kursi di dekat api',
-      'res.intro': 'Ini hanya konsep, jadi tidak ada yang benar-benar dikirim. Isi formulir untuk merasakan alur reservasinya.',
+      'res.intro': 'Ini hanya konsep, jadi tidak ada yang benar-benar dikirim. Pilih tempat, tanggal, dan waktu untuk merasakan alur reservasi sungguhan.',
       'res.name': 'Nama Anda', 'res.date': 'Tanggal', 'res.time': 'Sesi', 'res.guests': 'Tamu', 'res.notes': 'Catatan (alergi, acara khusus)',
       'res.t1': '17.30', 'res.t2': '19.00', 'res.t3': '20.30',
       'res.g': 'tamu', 'res.g1': '1 tamu',
@@ -220,7 +220,7 @@
 
     ja: {
 
-      'gal.eyebrow': '炭火の上で', 'gal.title': '五皿、ひとつの火',
+      'gal.eyebrow': '炭火の上で', 'gal.title': '十皿、ひとつの火',
 
       'gal.hint': 'スクロールして網の上をたどる',
 
@@ -303,7 +303,7 @@
       'about.d': 'Shiro Sumiは、Shiro Labsがポートフォリオのケーススタディとして作った架空のレストランです。実在しません。メニュー、価格、営業時間、住所、名称はすべて例示です。',
 
       'res.eyebrow': '予約', 'res.title': '火のそばの席を確保',
-      'res.intro': 'これはコンセプトなので、実際には何も送信されません。フォームに入力して、予約の流れを体験してください。',
+      'res.intro': 'これはコンセプトなので、実際には何も送信されません。お席・日付・時間を選んで、実際の予約の流れを体験してください。',
       'res.name': 'お名前', 'res.date': '日付', 'res.time': '時間帯', 'res.guests': '人数', 'res.notes': '備考(アレルギー、記念日など)',
       'res.t1': '17:30', 'res.t2': '19:00', 'res.t3': '20:30',
       'res.g': '名', 'res.g1': '1名',

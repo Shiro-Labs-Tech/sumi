@@ -39,13 +39,19 @@ PHOTOS = {
     'night':    ('1639716553235-a8275d845fd7', 4000, 6000, 'Jonathan Mark Bacolor', 'tanbacolor', 'LQeavijwPBA', '#260c0c'),
     'ueno':     ('1705803432022-f6145988c5d0', 3974, 5973, 'Ryunosuke Kikuno', 'ryunosuke_kikuno', 'Et5Q49kBYNE', '#260c0c'),
     'spice':    ('1741513599050-487ccfb86275', 5472, 3420, 'Marek Piwnicki', 'marekpiwnicki', 'zALm5VkUBWw', '#3a2008'),
+    'chicken':  ('1630564510761-a560db92a09b', 4160, 6240, 'Amanda Lim', 'mandimelanie', 'e_A-SFvqV08', '#262626'),
+    'mushroom': ('1676140382464-83cd80afc22b', 2268, 4032, 'Filipp Romanovski', 'filipp_roman_photography', 'B24epTR09To', '#2a2418'),
+    'tofu':     ('1762305194201-077e7e23ccf2', 5702, 3803, 'Lee Milo', 'miloleetw', 'N0lnO0gZlW8', '#3a2810'),
+    'banana':   ('1507835418932-dfcc1a16d393', 4288, 2848, 'Victor Kwashie', 'victorkg', '4VMr19ljQUA', '#2a2218'),
+    'icecream': ('1689076758310-92b693fe6b8b', 5102, 4912, 'BINYOUSSIF mohammad ali', 'binyoussif', 'CdP2h2Or8Pc', '#262626'),
+    'market':   ('1576181456177-2b99ac0aa1ef', 3024, 4032, 'Ashley Winkler', 'firlefanzski', 'cz4rC-IRfxw', '#2a2418'),
     'bar':      ('1657593091045-3927d4967afe', 5219, 3348, 'Russell Ferrer', 'russfr', 'FU4Egyl8o2k', '#1a1a1a'),
 }
 UTM = 'utm_source=shiro_sumi_concept&utm_medium=referral'
 # Which photo previews which dish (illustrative stock only).
-DISH_PHOTO = {'sate': 'yakitori', 'tsukune': 'grill', 'edamame': 'kitchen', 'tahu': 'bar', 'wagyu': 'night',
-              'snapper': 'ueno', 'ayam': 'steam', 'jamur': 'grill', 'rice': 'kitchen', 'kangkung': 'chef',
-              'banana': 'fire', 'ice': 'bar', 'iced': 'spice', 'jahe': 'spice', 'sake': 'bar'}
+DISH_PHOTO = {'sate': 'yakitori', 'tsukune': 'grill', 'edamame': 'kitchen', 'tahu': 'tofu', 'wagyu': 'night',
+              'snapper': 'ueno', 'ayam': 'chicken', 'jamur': 'mushroom', 'rice': 'kitchen', 'kangkung': 'market',
+              'banana': 'banana', 'ice': 'icecream', 'iced': 'spice', 'jahe': 'spice', 'sake': 'bar'}
 
 
 def purl(key, w):
@@ -208,7 +214,8 @@ def dish(k, featured=False):
 '''
 
 
-GALLERY = [('sate', 'yakitori'), ('tsukune', 'grill'), ('wagyu', 'night'), ('snapper', 'ueno'), ('jahe', 'spice')]
+GALLERY = [('sate', 'yakitori'), ('tsukune', 'grill'), ('tahu', 'tofu'), ('wagyu', 'night'), ('snapper', 'ueno'),
+           ('ayam', 'chicken'), ('jamur', 'mushroom'), ('banana', 'banana'), ('ice', 'icecream'), ('jahe', 'spice')]
 
 
 def card(i, k, photo):
@@ -254,7 +261,11 @@ def home():
 
   <section class="fire" data-fire>
     <div class="fire__stage">
-      {ph('grill', 'fire__img', sizes='100vw', widths=(900, 1600, 2400))}
+      <div class="fire__img">
+        {ph('grill', 'fire__layer', sizes='100vw', widths=(900, 1600, 2400))}
+        {ph('spice', 'fire__layer', sizes='100vw', widths=(900, 1600, 2400))}
+        {ph('market', 'fire__layer', sizes='100vw', widths=(900, 1600, 2400))}
+      </div>
       <div class="fire__shade" aria-hidden="true"></div>
       <div class="wrap fire__in">
         <header class="fire__head">
@@ -394,43 +405,19 @@ def reserve():
   </section>
 
   <section class="section section--tight">
-    <div class="wrap res-grid">
-      <form class="form reveal" id="res-form" novalidate>
-        <div class="field">
-          <label for="f-name" data-t="res.name">Your name</label>
-          <input id="f-name" name="name" type="text" autocomplete="name" required aria-describedby="e-name">
-          <p class="field__err" id="e-name" role="alert" hidden></p>
+    <div class="wrap bk" id="booking">
+      <div class="bk__main">
+        <div id="bk-steps">
+          <section class="bk__s" id="bk-seat"></section>
+          <section class="bk__s" id="bk-date"></section>
+          <section class="bk__s" id="bk-time"></section>
+          <section class="bk__s" id="bk-details"></section>
         </div>
-        <div class="field-row">
-          <div class="field">
-            <label for="f-date" data-t="res.date">Date</label>
-            <input id="f-date" name="date" type="date" min="{today}" required aria-describedby="e-date">
-            <p class="field__err" id="e-date" role="alert" hidden></p>
-          </div>
-          <div class="field">
-            <label for="f-time" data-t="res.time">Seating</label>
-            <select id="f-time" name="time">
-              <option data-t="res.t1">17:30</option><option data-t="res.t2" selected>19:00</option><option data-t="res.t3">20:30</option>
-            </select>
-          </div>
-          <div class="field">
-            <label for="f-guests" data-t="res.guests">Guests</label>
-            <select id="f-guests" name="guests" aria-describedby="h-guests">
-              <option value="1">1</option><option value="2" selected>2</option><option value="3">3</option>
-              <option value="4">4</option><option value="5">5</option><option value="6">6</option>
-            </select>
-          </div>
-        </div>
-        <p class="field__hint" id="h-guests" data-t="res.limit"></p>
-        <div class="field">
-          <label for="f-notes" data-t="res.notes">Notes</label>
-          <textarea id="f-notes" name="notes" rows="3"></textarea>
-        </div>
-        <button class="btn btn--ember" type="submit" data-t="res.submit">Request a seat</button>
-        <p class="form__ok" id="res-ok" role="status" hidden></p>
-      </form>
+        <section class="bk__done" id="bk-done" hidden></section>
+      </div>
 
-      <aside class="side reveal" style="--d:.12s">
+      <aside class="side">
+        <div class="sm" id="bk-sum" aria-live="polite"></div>
         <h2 class="h3" data-t="res.info.t">Good to know</h2>
         <dl class="facts facts--stack">
           <div class="fact"><dt data-t="visit.hours.t"></dt><dd data-t="visit.hours.d"></dd></div>

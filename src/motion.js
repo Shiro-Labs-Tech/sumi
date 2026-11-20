@@ -159,7 +159,7 @@ function setPieces() {
     const sec = $('[data-fire]');
     if (!sec) return;
     sec.classList.add('is-pinned');
-    const img = $('.fire__img', sec), pic = $('.fire__img img', sec), shade = $('.fire__shade', sec), steps = $$('.fire__step', sec);
+    const img = $('.fire__img', sec), pic = $$('.fire__layer img', sec), layers = $$('.fire__layer', sec), shade = $('.fire__shade', sec), steps = $$('.fire__step', sec);
     const tl = gsap.timeline({ scrollTrigger: { trigger: sec, start: 'top top', end: '+=260%', pin: true, scrub: 0.6, anticipatePin: 1, invalidateOnRefresh: true } });
     tl.fromTo(img, { clipPath: 'inset(34% 36% 34% 36% round 20px)' }, { clipPath: 'inset(0% 0% 0% 0% round 0px)', duration: 1, ease: 'power2.inOut' }, 0)
       .fromTo(pic, { scale: 1.35 }, { scale: 1, duration: 1.2, ease: 'none' }, 0)
@@ -167,7 +167,12 @@ function setPieces() {
     steps.forEach((s, i) => {
       const at = 0.8 + i * 0.85;
       tl.fromTo(s, { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 0.3, ease: 'power3.out' }, at);
-      if (i < steps.length - 1) tl.to(s, { opacity: 0, y: -50, duration: 0.3, ease: 'power3.in' }, at + 0.55);
+      if (i < steps.length - 1) {
+        tl.to(s, { opacity: 0, y: -50, duration: 0.3, ease: 'power3.in' }, at + 0.55);
+        // background follows the text: next photo fades in while the previous one eases out
+        tl.to(layers[i + 1], { opacity: 1, duration: 0.45, ease: 'none' }, at + 0.5);
+        tl.fromTo(pic[i + 1], { scale: 1.12 }, { scale: 1, duration: 0.9, ease: 'none' }, at + 0.5);
+      }
     });
     tl.to({}, { duration: 0.3 });
     return () => sec.classList.remove('is-pinned');
