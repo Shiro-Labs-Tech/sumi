@@ -506,3 +506,5 @@ html[lang='ja'] .bk__pl { letter-spacing: .06em; }
 .bk__nav .btn--ghost { background: transparent; }
 .bk__nav .btn--ghost:hover { background: color-mix(in srgb, var(--ash) 8%, transparent); }
 .bk__step { gap: 1.4rem; }
+.gst__v b { display: block; will-change: transform, opacity; }
+.gst__b { will-change: transform; }

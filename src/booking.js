@@ -504,7 +504,17 @@ function onClick(e) {
     root.querySelectorAll('[data-seat]').forEach((b) => { const on = b === t; b.classList.toggle('is-sel', on); b.setAttribute('aria-checked', on); });
     updateChrome(false); renderSummary(); schedule(next); return;
   }
-  if (t.dataset.g) { st.guests += +t.dataset.g; clampGuests(); invalidateDown(2); keepFocus(() => { renderStep(); }); return; }
+  if (t.dataset.g) {
+    const dir = +t.dataset.g, before = st.guests;
+    st.guests += dir; clampGuests(); invalidateDown(2);
+    keepFocus(() => { renderStep(); });
+    if (st.guests !== before && !reduced()) {
+      const b = root.querySelector('.gst__v b'), btn = root.querySelector(`[data-g="${dir}"]`);
+      if (b) gsap.fromTo(b, { yPercent: dir > 0 ? 55 : -55, opacity: 0, scale: 0.9 }, { yPercent: 0, opacity: 1, scale: 1, duration: 0.5, ease: 'power3.out', overwrite: true });
+      if (btn) gsap.fromTo(btn, { scale: 0.88 }, { scale: 1, duration: 0.45, ease: 'back.out(3)', overwrite: true });
+    }
+    return;
+  }
   if (t.dataset.nav) {
     let m = view.m + +t.dataset.nav, y = view.y; if (m < 0) { m = 11; y--; } if (m > 11) { m = 0; y++; }
     view = { y, m }; keepFocus(renderStep); return;
