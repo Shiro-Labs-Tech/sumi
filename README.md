@@ -16,3 +16,7 @@ Vite 7 multi-page static site, GSAP + ScrollTrigger, Lenis, split-type. EN / ID 
 
 ## Photography
 Hotlinked from Unsplash with photographer credits in the site footer.
+
+## Backend and staff dashboard
+
+The site has a real API (Vercel Function + Postgres), live availability and bookings, and a staff dashboard at `/admin` with reservation check-in and a menu editor. See [docs/backend.md](docs/backend.md). Setup variables are in `.env.example`.

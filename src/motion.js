@@ -286,8 +286,7 @@ function cursor() {
 }
 
 function peek() {
-  const rows = $$('.dish[data-peek]');
-  if (!rows.length || !fine || reduce) return;
+  if (!$('.menu') || !fine || reduce) return;
   const p = document.createElement('div');
   p.className = 'peek';
   p.innerHTML = '<img alt="" width="700" height="875">';
@@ -295,15 +294,19 @@ function peek() {
   const im = p.firstChild;
   const xTo = gsap.quickTo(p, 'x', { duration: 0.5, ease: 'power3' }), yTo = gsap.quickTo(p, 'y', { duration: 0.5, ease: 'power3' });
   const move = (e) => { xTo(Math.min(e.clientX + 32, innerWidth - p.offsetWidth - 24)); yTo(Math.min(Math.max(e.clientY - p.offsetHeight / 2, 80), innerHeight - p.offsetHeight - 16)); };
-  rows.forEach((r) => {
-    r.addEventListener('pointerenter', (e) => {
+  // Delegated, so rows rendered later from the menu API get the preview too.
+  let cur = null;
+  document.addEventListener('pointerover', (e) => {
+    const r = e.target.closest && e.target.closest('.dish[data-peek]');
+    if (r === cur) return;
+    cur = r;
+    if (r) {
       im.src = r.dataset.peek;
       gsap.to(p, { opacity: 1, clipPath: 'inset(0 0 0% 0)', duration: 0.5, ease: 'power3.out', overwrite: true });
       move(e);
-    });
-    r.addEventListener('pointermove', move);
-    r.addEventListener('pointerleave', () => gsap.to(p, { opacity: 0, clipPath: 'inset(0 0 100% 0)', duration: 0.35, ease: 'power3.in', overwrite: true }));
+    } else gsap.to(p, { opacity: 0, clipPath: 'inset(0 0 100% 0)', duration: 0.35, ease: 'power3.in', overwrite: true });
   });
+  document.addEventListener('pointermove', (e) => { if (cur) move(e); });
 }
 
 /* ---------- page transition fallback (Firefox) ---------- */

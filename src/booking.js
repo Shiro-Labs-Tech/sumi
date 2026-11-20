@@ -38,10 +38,10 @@ const S = {
     agree: 'I have read the policy above.', submit: 'Request this seat', submitWait: 'Join the waitlist', concept: 'Concept site: nothing is sent and no card is needed.',
     missing: 'Choose seating, date and time to continue.',
     eName: 'Please enter your name.', eEmail: 'Please enter a valid email.', ePhone: 'Please enter a mobile number.', eAgree: 'Please confirm the policy.',
-    doneT: 'Request received', doneW: 'You are on the waitlist', ref: 'Reference', doneNote: 'Concept only: no real booking was made.',
+    doneT: 'Request received', doneW: 'You are on the waitlist', ref: 'Reference', doneNote: 'Demo system: your request is stored so the staff dashboard can show it. No table is held and nobody will contact you.',
     next: 'In a real booking you would now get an email and an SMS, a reminder the day before, and a link to change or cancel.',
-    vT: 'Reservation confirmation', vScan: 'Scan on arrival', vSub: 'Binchotan grill · Surabaya', vIssued: 'Issued', vGuest: 'Guest', vContact: 'Contact', vDetails: 'Your reservation', vPay: 'Deposit and estimate', vTerms: 'Terms', vVenue: 'Venue', vAddr: 'Jl. Contoh No. 12, Surabaya (illustrative)', vHours: 'Tuesday to Sunday, 17:00 to 23:00. Closed Monday.', vMail: 'reservations@sumi.example (illustrative)', vArrive: 'Please quote your reference on arrival. We hold your seat for 15 minutes.', vConcept: 'Concept document. Shiro Sumi is a fictional restaurant by Shiro Labs. No booking was made and no payment was taken.', vPage: 'shiro-labs.tech', vFile: 'Shiro-Sumi-Reservation',
-    ics: 'Add to calendar', print: 'Save as PDF', again: 'Start another', thanks: 'Thank you, {name}.', icsTitle: 'Shiro Sumi (concept)', icsDesc: 'Concept reservation, not a real booking.',
+    vT: 'Reservation confirmation', vScan: 'Scan on arrival', vSub: 'Binchotan grill · Surabaya', vIssued: 'Issued', vGuest: 'Guest', vContact: 'Contact', vDetails: 'Your reservation', vPay: 'Deposit and estimate', vTerms: 'Terms', vVenue: 'Venue', vAddr: 'Jl. Contoh No. 12, Surabaya (illustrative)', vHours: 'Tuesday to Sunday, 17:00 to 23:00. Closed Monday.', vMail: 'reservations@sumi.example (illustrative)', vArrive: 'Please quote your reference on arrival. We hold your seat for 15 minutes.', vConcept: 'Concept document. Shiro Sumi is a fictional restaurant by Shiro Labs. The reservation exists in a demo system only: no table is held and no payment was taken.', vPage: 'shiro-labs.tech', vFile: 'Shiro-Sumi-Reservation',
+    loadingAv: 'Checking tables…', avFail: 'We could not load availability.', retry: 'Try again', sending: 'Sending…', eNet: 'We could not reach the reservation system. Please try again.', eSlot: 'That time was just taken. Please pick another.', demoHint: 'This is a demo system. Please use a made-up name and email.', ics: 'Add to calendar', print: 'Save as PDF', again: 'Start another', thanks: 'Thank you, {name}.', icsTitle: 'Shiro Sumi (concept)', icsDesc: 'Concept reservation, not a real booking.',
     info: 'Good to know',
   },
   id: {
@@ -78,10 +78,10 @@ const S = {
     agree: 'Saya sudah membaca kebijakan di atas.', submit: 'Ajukan kursi ini', submitWait: 'Masuk daftar tunggu', concept: 'Situs konsep: tidak ada yang dikirim dan tidak perlu kartu.',
     missing: 'Pilih tempat, tanggal, dan waktu untuk melanjutkan.',
     eName: 'Silakan isi nama Anda.', eEmail: 'Masukkan email yang valid.', ePhone: 'Masukkan nomor ponsel.', eAgree: 'Mohon setujui kebijakan.',
-    doneT: 'Permintaan diterima', doneW: 'Anda masuk daftar tunggu', ref: 'Referensi', doneNote: 'Hanya konsep: tidak ada reservasi sungguhan.',
+    doneT: 'Permintaan diterima', doneW: 'Anda masuk daftar tunggu', ref: 'Referensi', doneNote: 'Sistem demo: permintaan Anda disimpan agar dasbor staf dapat menampilkannya. Tidak ada meja yang ditahan dan tidak ada yang akan menghubungi Anda.',
     next: 'Pada reservasi nyata, Anda akan menerima email dan SMS, pengingat sehari sebelumnya, dan tautan untuk mengubah atau membatalkan.',
-    vT: 'Konfirmasi reservasi', vScan: 'Pindai saat tiba', vSub: 'Panggangan binchotan · Surabaya', vIssued: 'Diterbitkan', vGuest: 'Tamu', vContact: 'Kontak', vDetails: 'Reservasi Anda', vPay: 'Deposit dan estimasi', vTerms: 'Ketentuan', vVenue: 'Lokasi', vAddr: 'Jl. Contoh No. 12, Surabaya (ilustrasi)', vHours: 'Selasa sampai Minggu, 17.00 sampai 23.00. Senin tutup.', vMail: 'reservations@sumi.example (ilustrasi)', vArrive: 'Mohon sebutkan nomor referensi saat tiba. Kami menahan kursi Anda selama 15 menit.', vConcept: 'Dokumen konsep. Shiro Sumi adalah restoran fiktif karya Shiro Labs. Tidak ada reservasi dan tidak ada pembayaran.', vPage: 'shiro-labs.tech', vFile: 'Shiro-Sumi-Reservasi',
-    ics: 'Tambah ke kalender', print: 'Simpan PDF', again: 'Mulai lagi', thanks: 'Terima kasih, {name}.', icsTitle: 'Shiro Sumi (konsep)', icsDesc: 'Reservasi konsep, bukan reservasi sungguhan.',
+    vT: 'Konfirmasi reservasi', vScan: 'Pindai saat tiba', vSub: 'Panggangan binchotan · Surabaya', vIssued: 'Diterbitkan', vGuest: 'Tamu', vContact: 'Kontak', vDetails: 'Reservasi Anda', vPay: 'Deposit dan estimasi', vTerms: 'Ketentuan', vVenue: 'Lokasi', vAddr: 'Jl. Contoh No. 12, Surabaya (ilustrasi)', vHours: 'Selasa sampai Minggu, 17.00 sampai 23.00. Senin tutup.', vMail: 'reservations@sumi.example (ilustrasi)', vArrive: 'Mohon sebutkan nomor referensi saat tiba. Kami menahan kursi Anda selama 15 menit.', vConcept: 'Dokumen konsep. Shiro Sumi adalah restoran fiktif karya Shiro Labs. Reservasi hanya ada di sistem demo: tidak ada meja yang ditahan dan tidak ada pembayaran.', vPage: 'shiro-labs.tech', vFile: 'Shiro-Sumi-Reservasi',
+    loadingAv: 'Memeriksa meja…', avFail: 'Ketersediaan tidak dapat dimuat.', retry: 'Coba lagi', sending: 'Mengirim…', eNet: 'Sistem reservasi tidak dapat dihubungi. Silakan coba lagi.', eSlot: 'Waktu itu baru saja terisi. Silakan pilih yang lain.', demoHint: 'Ini sistem demo. Mohon gunakan nama dan email karangan.', ics: 'Tambah ke kalender', print: 'Simpan PDF', again: 'Mulai lagi', thanks: 'Terima kasih, {name}.', icsTitle: 'Shiro Sumi (konsep)', icsDesc: 'Reservasi konsep, bukan reservasi sungguhan.',
     info: 'Perlu diketahui',
   },
   ja: {
@@ -118,10 +118,10 @@ const S = {
     agree: '上記の内容を確認しました。', submit: 'この席をリクエスト', submitWait: '空き待ちに登録', concept: 'コンセプトサイトのため、何も送信されず、カードも不要です。',
     missing: 'お席・日付・時間を選ぶと進めます。',
     eName: 'お名前を入力してください。', eEmail: '正しいメールアドレスを入力してください。', ePhone: '携帯電話番号を入力してください。', eAgree: '内容への同意が必要です。',
-    doneT: 'リクエストを受け付けました', doneW: '空き待ちに登録しました', ref: '予約番号', doneNote: 'コンセプトのため、実際の予約は行われていません。',
+    doneT: 'リクエストを受け付けました', doneW: '空き待ちに登録しました', ref: '予約番号', doneNote: 'デモシステムです。ご依頼はスタッフ用ダッシュボードに表示するため保存されますが、お席の確保やご連絡はありません。',
     next: '実際の予約では、メールとSMSの確認、前日のリマインド、変更・キャンセル用のリンクが届きます。',
-    vT: 'ご予約確認書', vScan: 'ご来店時にご提示ください', vSub: '備長炭グリル · スラバヤ', vIssued: '発行日', vGuest: 'お客様', vContact: '連絡先', vDetails: 'ご予約内容', vPay: 'デポジットとお見積り', vTerms: 'ご利用条件', vVenue: '店舗情報', vAddr: 'Jl. Contoh No. 12, スラバヤ(架空)', vHours: '火曜〜日曜 17:00〜23:00。月曜定休。', vMail: 'reservations@sumi.example(架空)', vArrive: 'ご来店時に予約番号をお伝えください。お席は15分間お取りします。', vConcept: 'コンセプト文書です。Shiro Sumiは Shiro Labs による架空のレストランで、実際の予約も支払いもありません。', vPage: 'shiro-labs.tech', vFile: 'Shiro-Sumi-Yoyaku',
-    ics: 'カレンダーに追加', print: 'PDFで保存', again: 'もう一度予約する', thanks: '{name}様、ありがとうございます。', icsTitle: 'Shiro Sumi(コンセプト)', icsDesc: 'コンセプトの予約であり、実際の予約ではありません。',
+    vT: 'ご予約確認書', vScan: 'ご来店時にご提示ください', vSub: '備長炭グリル · スラバヤ', vIssued: '発行日', vGuest: 'お客様', vContact: '連絡先', vDetails: 'ご予約内容', vPay: 'デポジットとお見積り', vTerms: 'ご利用条件', vVenue: '店舗情報', vAddr: 'Jl. Contoh No. 12, スラバヤ(架空)', vHours: '火曜〜日曜 17:00〜23:00。月曜定休。', vMail: 'reservations@sumi.example(架空)', vArrive: 'ご来店時に予約番号をお伝えください。お席は15分間お取りします。', vConcept: 'コンセプト文書です。Shiro Sumiは Shiro Labs による架空のレストランです。予約はデモシステム内にのみ存在し、お席の確保も支払いもありません。', vPage: 'shiro-labs.tech', vFile: 'Shiro-Sumi-Yoyaku',
+    loadingAv: '空席を確認中…', avFail: '空き状況を読み込めませんでした。', retry: '再試行', sending: '送信中…', eNet: '予約システムに接続できませんでした。もう一度お試しください。', eSlot: 'その時間は埋まりました。別の時間をお選びください。', demoHint: 'これはデモシステムです。架空のお名前とメールアドレスをご利用ください。', ics: 'カレンダーに追加', print: 'PDFで保存', again: 'もう一度予約する', thanks: '{name}様、ありがとうございます。', icsTitle: 'Shiro Sumi(コンセプト)', icsDesc: 'コンセプトの予約であり、実際の予約ではありません。',
     info: 'ご案内',
   },
 };
@@ -181,35 +181,39 @@ const iso = (d) => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0
 const parse = (s) => { const p = s.split('-'); return new Date(+p[0], +p[1] - 1, +p[2]); };
 const today0 = () => { const d = new Date(); d.setHours(0, 0, 0, 0); return d; };
 const addDays = (d, n) => { const x = new Date(d); x.setDate(x.getDate() + n); return x; };
-const minDate = () => addDays(today0(), 1);
+const minDate = () => today0();
 const maxDate = () => addDays(today0(), HORIZON);
 const longDate = (s) => new Intl.DateTimeFormat(loc(), { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' }).format(parse(s));
 
-/* seeded availability */
-function hash(str) {
-  let h = 1779033703 ^ str.length;
-  for (let i = 0; i < str.length; i++) { h = Math.imul(h ^ str.charCodeAt(i), 3432918353); h = (h << 13) | (h >>> 19); }
-  h = Math.imul(h ^ (h >>> 16), 2246822507); h = Math.imul(h ^ (h >>> 13), 3266489909);
-  return ((h ^= h >>> 16) >>> 0) / 4294967296;
-}
-function seatsLeft(date, seat, time) {
-  const c = SEATS[seat], d = parse(date), dow = d.getDay();
-  const r = hash(`${date}|${seat}|${time}`);
-  const hr = +time.slice(0, 2);
-  const prime = hr >= 19 && hr <= 20 ? 0.12 : 0;
-  const weekend = dow === 5 || dow === 6 ? 0.2 : dow === 0 ? 0.08 : 0;
-  const occ = Math.min(1.05, 0.28 + r * 0.62 + prime + weekend);
-  return Math.max(0, c.cap - Math.round(c.cap * occ));
-}
+/* availability comes from the server (GET /api/availability), cached per seating */
+const AV = {};
+let avErr = null;
+const seatsLeft = (date, seat, time) => { const n = AV[seat] && AV[seat].days[date] && AV[seat].days[date].slots[time]; return n == null ? null : n; };
 function dayState(date) {
-  const d = parse(date);
-  if (d < minDate() || d > maxDate()) return 'out';
-  if (d.getDay() === 1) return 'closed';
-  if (!st.seat) return 'open';
-  const c = SEATS[st.seat];
-  const ok = c.slots.filter((t) => seatsLeft(date, st.seat, t) >= st.guests).length;
-  return ok === 0 ? 'full' : ok <= Math.max(1, Math.floor(c.slots.length / 3)) ? 'few' : 'open';
+  const a = AV[st.seat];
+  if (!a) return 'open';
+  const d = a.days[date];
+  if (!d) return 'out';
+  if (d.state === 'closed') return 'closed';
+  const slots = Object.values(d.slots), ok = slots.filter((n) => n >= st.guests).length;
+  return ok === 0 ? 'full' : ok <= Math.max(1, Math.floor(slots.length / 3)) ? 'few' : 'open';
 }
+async function loadAvail(force) {
+  const seat = st.seat; if (!seat) return;
+  const cur = AV[seat];
+  if (!force && cur && Date.now() - cur.at < 45000) return;
+  try {
+    const r = await fetch(`/api/availability?seat=${encodeURIComponent(seat)}`, { headers: { accept: 'application/json' } });
+    if (!r.ok) throw new Error(String(r.status));
+    AV[seat] = { ...(await r.json()), at: Date.now() }; avErr = null;
+  } catch { avErr = seat; }
+  if (seat !== st.seat) return;
+  invalidateDown(2); renderSummary();
+  if ((st.step === 2 || st.step === 3) && !busy) renderStep();
+}
+const availGate = (t) => AV[st.seat] ? '' : avErr === st.seat
+  ? `<div class="bk__note" data-a role="alert">${esc(t.avFail)} <button type="button" class="btn btn--ghost" data-act="retryav">${esc(t.retry)}</button></div>`
+  : `<p class="bk__note" data-a role="status">${esc(t.loadingAv)}</p>`;
 
 /* ---------- helpers for state ---------- */
 function clampGuests() {
@@ -217,7 +221,7 @@ function clampGuests() {
   const c = SEATS[st.seat];
   st.guests = Math.min(c.max, Math.max(c.min, st.guests));
 }
-function slotFull() { return !!(st.seat && st.date && st.time && seatsLeft(st.date, st.seat, st.time) < st.guests); }
+function slotFull() { if (!(st.seat && st.date && st.time)) return false; const n = seatsLeft(st.date, st.seat, st.time); return n != null && n < st.guests; }
 function invalidateDown(from) {
   if (from <= 1) { /* seat changed */ clampGuests(); }
   if (st.date && dayState(st.date) !== 'open' && dayState(st.date) !== 'few') { /* full dates stay selectable only if open/few */ st.date = ''; st.time = ''; }
@@ -266,10 +270,6 @@ function calHTML() {
     <p class="bk__hint">${esc(t.calNote)}</p></div>`;
 }
 
-function refCode() {
-  const n = Math.floor(hash(`${st.name}|${st.date}|${st.time}|${st.seat}`) * 36 ** 5);
-  return 'SUMI-' + n.toString(36).toUpperCase().padStart(5, '0');
-}
 function icsFile() {
   const d = st.date.replace(/-/g, ''), [h, m] = st.time.split(':').map(Number);
   const end = `${String((h + 2) % 24).padStart(2, '0')}${String(m).padStart(2, '0')}00`;
@@ -312,13 +312,14 @@ function body(i) {
       <p class="bk__hint" data-a>${esc(fmt(t.range, { a: c.min, b: c.max }))}</p>
       <p class="bk__hint" data-a>${esc(fmt(t.depLine, { a: money(c.dep) }))}</p>`;
   }
-  if (i === 2) return `<div data-a>${calHTML()}</div>`;
+  if (i === 2) return AV[st.seat] ? `<div data-a>${calHTML()}</div>` : availGate(t);
   if (i === 3) {
+    if (!AV[st.seat]) return availGate(t);
     const c = SEATS[st.seat];
     const btn = (tm, label) => {
-      const left = seatsLeft(st.date, st.seat, tm), full = left < st.guests, sel = st.time === tm;
-      const sub = full ? t.wait : left <= 6 ? fmt(t.left, { n: left }) : '';
-      return `<button type="button" class="slot${sel ? ' is-sel' : ''}${full ? ' is-full' : ''}" data-t="${tm}" aria-pressed="${sel}"><b>${tm}</b>${label ? `<span>${esc(label)}</span>` : ''}${sub ? `<em>${esc(sub)}</em>` : ''}</button>`;
+      const left = seatsLeft(st.date, st.seat, tm), gone = left == null, full = !gone && left < st.guests, sel = st.time === tm;
+      const sub = gone ? t.lClosed : full ? t.wait : left <= 6 ? fmt(t.left, { n: left }) : '';
+      return `<button type="button" class="slot${sel ? ' is-sel' : ''}${full || gone ? ' is-full' : ''}" data-t="${tm}" aria-pressed="${sel}"${gone ? ' disabled' : ''}><b>${tm}</b>${label ? `<span>${esc(label)}</span>` : ''}${sub ? `<em>${esc(sub)}</em>` : ''}</button>`;
     };
     let h = `<p class="bk__sub" data-a>${esc(longDate(st.date))}</p>`;
     if (st.seat === 'counter' || st.seat === 'room') h += `<div class="slots slots--big" data-a>${c.slots.map((tm, k) => btn(tm, k ? t.seating2 : t.seating1)).join('')}</div><p class="bk__hint" data-a>${esc(t.seatingLegend)}</p>`;
@@ -344,7 +345,7 @@ function body(i) {
     }).join('') + `</div><p class="bk__hint" data-a>${esc(t.addOpt)}</p>`;
   }
   if (i === 7) {
-    return `<div class="bk__form">
+    return `<p class="bk__hint" data-a>${esc(t.demoHint)}</p><div class="bk__form">
       <div class="field" data-a><label for="b-name">${esc(t.name)}</label><input id="b-name" autocomplete="name" value="${esc(st.name)}" aria-describedby="b-e-name"><p class="field__err" id="b-e-name" role="alert" hidden></p></div>
       <div class="field" data-a><label for="b-email">${esc(t.email)}</label><input id="b-email" type="email" autocomplete="email" value="${esc(st.email)}" aria-describedby="b-e-email"><p class="field__err" id="b-e-email" role="alert" hidden></p></div>
       <div class="field-row field-row--phone" data-a>
@@ -359,7 +360,7 @@ function body(i) {
     ${row(t.sOcc, esc(t.occs[st.occ]))}${row(t.sDiet, st.diet.length ? esc(st.diet.map((k) => t.diets[k]).join(', ')) : esc(t.sNone))}${row(t.sAdd, ad.length ? esc(ad.join(', ')) : esc(t.sNone))}
     ${row(t.sDep, `${w ? '' : money(tt.dep)}<small>${esc(w ? t.depWait : t.depNow)}</small>`)}${row(t.contact, esc(st.name) + '<small>' + esc(st.email) + '</small>')}</dl>
     <div class="bk__pol" data-a><h3>${esc(t.pol)}</h3><ul><li>${esc(t.pol1)}</li><li>${esc(t.pol2)}</li><li>${esc(t.pol3)}</li></ul>
-      <label class="agree"><input type="checkbox" id="b-agree" ${st.agree ? 'checked' : ''} aria-describedby="b-e-agree"><span>${esc(t.agree)}</span></label><p class="field__err" id="b-e-agree" role="alert" hidden></p></div>
+      <label class="agree"><input type="checkbox" id="b-agree" ${st.agree ? 'checked' : ''} aria-describedby="b-e-agree"><span>${esc(t.agree)}</span></label><p class="field__err" id="b-e-agree" role="alert" hidden></p><p class="field__err" id="bk-sub-err" role="alert" hidden></p></div>
     <p class="bk__hint" data-a>${esc(t.concept)}</p>`;
 }
 
@@ -426,6 +427,7 @@ function renderSummary() {
 /* animated step change: current step slides out, the question rises from a mask, the options stagger in */
 function go(to) {
   if (busy || to < 0 || to >= N || to === st.step) return;
+  if (to === 2) loadAvail();
   const dir = to > st.step ? 1 : -1, stage = root.querySelector('#bk-stage'), cur = stage.firstElementChild;
   const swap = () => {
     st.step = to; stage.innerHTML = stepHTML(); updateChrome(true); renderSummary();
@@ -445,6 +447,7 @@ function go(to) {
   else gsap.to(cur, { opacity: 0, x: -36 * dir, duration: 0.32, ease: 'power2.in', onComplete: swap });
 }
 
+const go_ = (n) => go(n);
 function schedule(fn) { const tok = ++autoTok; setTimeout(() => { if (tok === autoTok) fn(); }, reduced() ? 120 : 420); }
 function cancelAuto() { autoTok++; }
 
@@ -465,10 +468,27 @@ function validateContact() {
   return true;
 }
 
-function finish() {
-  const a = root.querySelector('#b-agree');
-  if (!a.checked) { showErr('b-e-agree', a, L().eAgree); a.focus(); return; }
-  st.done = { ref: refCode(), wait: slotFull() };
+let submitting = false;
+async function finish() {
+  const a = root.querySelector('#b-agree'), t = L(), go = root.querySelector('#bk-go');
+  if (submitting) return;
+  if (!a.checked) { showErr('b-e-agree', a, t.eAgree); a.focus(); return; }
+  showErr('bk-sub-err', null, '');
+  submitting = true; go.disabled = true; go.textContent = t.sending;
+  const body = { seat: st.seat, guests: st.guests, date: st.date, time: st.time, name: st.name, email: st.email, cc: st.cc, phone: st.phone, occasion: st.occ,
+    diet: st.diet.map(Number), addons: ['sake', 'cake'].filter((k) => st.add[k]), notes: st.notes, lang: lang(), website: '' };
+  let res, j = {};
+  try {
+    res = await fetch('/api/reservations', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(body) });
+    j = await res.json().catch(() => ({}));
+  } catch { res = null; }
+  submitting = false; go.disabled = false; go.textContent = slotFull() ? t.submitWait : t.submit;
+  if (!res || res.status >= 500) { showErr('bk-sub-err', null, t.eNet); return; }
+  if (!res.ok) {
+    if (['date', 'time', 'guests'].includes(j.code)) { await loadAvail(true); showErr('bk-sub-err', null, t.eSlot); go_(j.code === 'time' ? 3 : j.code === 'date' ? 2 : 1); return; }
+    showErr('bk-sub-err', null, j.error || t.eNet); return;
+  }
+  st.done = { ref: j.ref, wait: j.status === 'waitlist' };
   const parts = root.querySelector('#bk-wiz');
   const show = () => { parts.hidden = true; renderDone(); const d = root.querySelector('#bk-done'); if (!reduced()) gsap.from(d.children, { opacity: 0, y: 24, stagger: 0.08, duration: 0.7, ease: 'power3.out' }); const h = root.querySelector('#bk-ok'); h.focus({ preventScroll: true }); root.scrollIntoView({ block: 'start', behavior: reduced() ? 'auto' : 'smooth' }); };
   if (reduced()) show(); else gsap.to(parts, { opacity: 0, y: -16, duration: 0.35, ease: 'power2.in', onComplete: () => { show(); gsap.set(parts, { clearProps: 'all' }); } });
@@ -514,7 +534,7 @@ function voucherHTML() {
       <div class="vch__brand"><span class="vch__seal">炭</span><div><p class="vch__name">Shiro Sumi</p><p class="vch__tag">${esc(t.vSub)}</p></div></div>
       <div class="vch__doc"><p class="vch__dt">${esc(t.vT)}</p><p class="vch__st${w ? ' is-wait' : ''}">${esc(w ? t.doneW : t.doneT)}</p></div>
     </header>
-    <section class="vch__ref"><div class="vch__rl"><p class="vch__lb">${esc(t.ref)}</p><p class="vch__code">${esc(st.done.ref)}</p><p class="vch__iss"><span>${esc(t.vIssued)}</span> ${esc(issued)}</p></div><figure class="vch__qr"><div class="vch__qrs" role="img" aria-label="QR ${esc(st.done.ref)}">${qrSvg(st.done.ref)}</div><figcaption>${esc(t.vScan)}</figcaption></figure></section>
+    <section class="vch__ref"><div class="vch__rl"><p class="vch__lb">${esc(t.ref)}</p><p class="vch__code">${esc(st.done.ref)}</p><p class="vch__iss"><span>${esc(t.vIssued)}</span> ${esc(issued)}</p></div><figure class="vch__qr"><div class="vch__qrs" role="img" aria-label="QR ${esc(st.done.ref)}">${qrSvg(`${location.origin}/admin#/r/${st.done.ref}`)}</div><figcaption>${esc(t.vScan)}</figcaption></figure></section>
     <section class="vch__when">
       <div><p class="vch__lb">${esc(t.sDate)}</p><p class="vch__big">${esc(longDate(st.date))}</p></div>
       <div><p class="vch__lb">${esc(t.sTime)}</p><p class="vch__big">${esc(st.time)}${w ? `<small> · ${esc(t.wait)}</small>` : ''}</p></div>
@@ -567,9 +587,9 @@ function onClick(e) {
   if (t.dataset.seat) {
     st.seat = t.dataset.seat; clampGuests(); invalidateDown(1);
     root.querySelectorAll('[data-seat]').forEach((b) => { const on = b === t; b.classList.toggle('is-sel', on); b.setAttribute('aria-checked', on); });
-    updateChrome(false); renderSummary(); schedule(next); return;
+    updateChrome(false); renderSummary(); loadAvail(true); schedule(next); return;
   }
-  if (t.dataset.upsell) { st.seat = t.dataset.upsell; clampGuests(); invalidateDown(1); renderStep(); const v = root.querySelector('.gst__v b'); if (v && !reduced()) gsap.from(v, { scale: 1.12, duration: 0.5, ease: 'back.out(2.5)' }); return; }
+  if (t.dataset.upsell) { st.seat = t.dataset.upsell; clampGuests(); invalidateDown(1); renderStep(); loadAvail(true); const v = root.querySelector('.gst__v b'); if (v && !reduced()) gsap.from(v, { scale: 1.12, duration: 0.5, ease: 'back.out(2.5)' }); return; }
   if (t.dataset.g) {
     const dir = +t.dataset.g, before = st.guests;
     st.guests += dir; clampGuests(); invalidateDown(2);
@@ -596,6 +616,7 @@ function onClick(e) {
   }
   if (t.dataset.add) { st.add[t.dataset.add] = t.checked; updateChrome(false); renderSummary(); return; }
   if (t.dataset.act === 'ics') { const u = URL.createObjectURL(icsFile()), a = document.createElement('a'); a.href = u; a.download = 'shiro-sumi-concept.ics'; document.body.append(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(u), 1500); return; }
+  if (t.dataset.act === 'retryav') { avErr = null; renderStep(); loadAvail(true); return; }
   if (t.dataset.act === 'print') { printVoucher(); return; }
   if (t.dataset.act === 'again') { Object.assign(st, { step: 0, seat: '', guests: 2, date: '', time: '', occ: 0, diet: [], sn: [], notes: '', add: { sake: false, cake: false }, agree: false, done: null }); view = null; mountVoucher(); renderAll(); root.scrollIntoView({ block: 'start' }); return; }
 }
