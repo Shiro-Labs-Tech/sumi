@@ -545,12 +545,15 @@ function onClick(e) {
   if (t.dataset.act === 'again') { Object.assign(st, { step: 0, seat: '', guests: 2, date: '', time: '', occ: 0, diet: [], sn: [], notes: '', add: { sake: false, cake: false }, agree: false, done: null }); view = null; renderAll(); root.scrollIntoView({ block: 'start' }); return; }
 }
 
+// clear a shown error as soon as the field becomes valid
+function liveFix(i, ok) { if (ok && i.getAttribute('aria-invalid') === 'true') showErr('b-e-' + i.id.slice(2), i, ''); }
+
 function onInput(e) {
   const i = e.target;
   if (i.id === 'b-notes') { st.notes = i.value; updateChrome(false); }
-  else if (i.id === 'b-name') st.name = i.value;
-  else if (i.id === 'b-email') st.email = i.value;
-  else if (i.id === 'b-phone') st.phone = i.value;
+  else if (i.id === 'b-name') { st.name = i.value; liveFix(i, i.value.trim().length > 1); }
+  else if (i.id === 'b-email') { st.email = i.value; liveFix(i, /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(i.value.trim())); }
+  else if (i.id === 'b-phone') { st.phone = i.value; liveFix(i, i.value.replace(/\D/g, '').length >= 6); }
   else if (i.id === 'b-cc') st.cc = i.value;
   else if (i.id === 'b-agree') { st.agree = i.checked; if (i.checked) showErr('b-e-agree', i, ''); }
 }

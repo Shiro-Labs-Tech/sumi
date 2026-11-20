@@ -517,3 +517,8 @@ button.btn--ghost { background: transparent; }
 .up__btn { color: var(--glow); border-color: color-mix(in srgb, var(--glow) 60%, transparent); }
 .up__btn:hover { background: color-mix(in srgb, var(--glow) 12%, transparent); border-color: var(--glow); }
 .bk__q { font-optical-sizing: none; font-variation-settings: 'opsz' 28; }
+/* errors reserve their line so showing one never shifts the layout */
+.bk__form .field__err { margin: 0; min-height: 1.35em; line-height: 1.35; }
+.bk__form .field__err[hidden] { display: block; visibility: hidden; }
+.bk__form .field-row, .bk__form .field-row--phone { align-items: start; }
+.bk__form .agree + .field__err { min-height: 1.35em; }
